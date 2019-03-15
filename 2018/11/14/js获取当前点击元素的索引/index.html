@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  
+  <meta name="description" content="慢才后生的个人博客">
+  
+
+  
+  <meta name="keywords" content="慢才后生,博客,个人网站,学习,分享">
+  
+  
+  
+  
+  
+  
+  <title>js获取当前点击元素的索引 | 流星聚集地</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="以ul下的li元素为例；获取li的索引，代码如下：     &amp;lt;ul id=”list”&amp;gt;         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;li&amp;gt;1&amp;lt;/li&amp;gt;        &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;li&amp;gt;2&amp;lt;/li&amp;gt;         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;li&amp;g">
+<meta name="keywords" content="js,index">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js获取当前点击元素的索引">
+<meta property="og:url" content="http://yoursite.com/2018/11/14/js获取当前点击元素的索引/index.html">
+<meta property="og:site_name" content="流星聚集地">
+<meta property="og:description" content="以ul下的li元素为例；获取li的索引，代码如下：     &amp;lt;ul id=”list”&amp;gt;         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;li&amp;gt;1&amp;lt;/li&amp;gt;        &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;li&amp;gt;2&amp;lt;/li&amp;gt;         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;li&amp;g">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-02-24T17:24:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js获取当前点击元素的索引">
+<meta name="twitter:description" content="以ul下的li元素为例；获取li的索引，代码如下：     &amp;lt;ul id=”list”&amp;gt;         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;li&amp;gt;1&amp;lt;/li&amp;gt;        &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;li&amp;gt;2&amp;lt;/li&amp;gt;         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;li&amp;g">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="流星聚集地" rel="home">流星聚集地</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">--灵感的源泉(⑅˃◡˂⑅)</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/about">关于</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/MyProjects">我的项目</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">记录</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">首页</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-js获取当前点击元素的索引" class="post-js获取当前点击元素的索引 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      js获取当前点击元素的索引
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2018/11/14/js获取当前点击元素的索引/" data-id="cjt9zddma000agsrqz9gcombg" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>以ul下的li元素为例；获取li的索引，代码如下：</p>
+<p><br>    &lt;ul id=”list”&gt;<br><br>         &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;1&lt;/li&gt;<br><br>        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;2&lt;/li&gt;<br><br>         &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;3&lt;/li&gt;<br><br>        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;4&lt;/li&gt;<br><br>    &lt;/ul&gt;<br></p>
+
+
+<a id="more"></a>
+<p>方法1：(自执行匿名函数法)</p>
+<p>var ul = document.getElementById(“list”);<br>var list = ul.getElementsByTagName(‘li’);<br>for(var i=0;i&lt;list.length;i++) {<br>  !function(j) {    // 匿名函数表达式1(j为该匿名函数形参)<br>     // console.log(j); //0,1,2,3<br>        list[j].onclick = function() {    // 该匿名函数中 无参数！<br>       console.log(j); // 点哪个输出哪个<br>      };<br>    }(i);    // 传入实参i,调用匿名函数<br>  }</p>
+<p>方法2：(函数调用法)</p>
+<p>function acti(ind) {<br>  list[ind].onclick = function() {    // 该匿名函数中 无参数！<br>     console.log(ind); // 点哪个输出哪个<br>  };<br>}<br>for(var i=0;i&lt;list.length;i++) {<br>  acti(i);<br>}</p>
+<p>方法3:(添加自定义属性index法)</p>
+<p>把每个li元素加上自定义属性index,在li被点击时获取相应index属性即可</p>
+<p>var ul = document.getElementById(“list”);<br>var list = ul.querySelectorAll(‘li’);<br>for (var i = 0; i&lt;list.length; i++) {<br>   list[i].index = i;    // 为每个li添加自定义属性并相应赋值<br>}<br>ul.addEventListener(‘click’,function(e){    // 为整个ul添加click<br>   console.log(e.target.index);    // 输出click target(即被点击的li) 对应的index值<br>})</p>
+<p>方法4：(数组indexOf元素索引定位法)</p>
+<p>获取ul下的所有li，找到被点击li在所有li中的位置</p>
+<p>ul.addEventListener(‘click’,function(e){<br>   var item = e.target;<br>   var listArr = Array.from(list);<br>   console.log(listArr.indexOf(item));<br>})</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2018/11/14/js获取当前点击元素的索引/">
+    <time datetime="2018-11-14T15:29:46.000Z" class="entry-date">
+        2018-11-14
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/learning/">学习</a>
+  </div>
+
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/index/">index</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2018/11/23/java class中的构造方法/" rel="prev"><span class="meta-nav">←</span> java class中的构造方法</a></span>
+    
+    
+        <span class="nav-next"><a href="/2018/11/01/js,jq获取 滚动条高度 及 浏览器宽高/" rel="next">js,jq获取 滚动条高度 及 浏览器宽高 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//baidu.com/s">
+    <div>
+        <input type="text" value name="wd" id="s">
+        <input type="submit" id="searchsubmit" value="百度一下">
+    </div>
+</form></aside>
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">音乐</h3>
+    <div class="widget-content">
+      <audio src="http://www.ytmp3.cn/down/36706.mp3" controls="controls" style="width:100%">
+        您的浏览器不支持 audio 标签。
+      </audio>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-content">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/other/">其它</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/learning/">学习</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/movies/">电影</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/musics/">音乐</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2019/01/25/a-success/">a success</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/25/Never-letting-Go/">Never letting Go</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/25/流浪地球/">流浪地球</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/28/wamp server2.5版本 配置多站点/">wamp server2.5版本 配置多站点</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/23/java class中的构造方法/">java class中的构造方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/index/" style="font-size: 10px;">index</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/jq/" style="font-size: 10px;">jq</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/new实例化/" style="font-size: 10px;">new实例化</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/wamp-server/" style="font-size: 10px;">wamp server</a> <a href="/tags/国片新星/" style="font-size: 10px;">国片新星</a> <a href="/tags/构造方法/" style="font-size: 10px;">构造方法</a> <a href="/tags/滚动条高度/" style="font-size: 10px;">滚动条高度</a>
+    </div>
+  </aside>
+
+  
+</div>
+      </div>
+      <a href="#" style="position: fixed;right: 10%;bottom:10%;width:26px;height:30px;line-height:30px;border: 1px solid #b18686;text-align: center;text-decoration: none;color:#4d5a2d;cursor: pointer;">Top</a>
+<footer id="colophon" style="text-align: center;" role="contentinfo">
+    <p>&copy; 2019 慢才后生
+    All rights reserved.</p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
