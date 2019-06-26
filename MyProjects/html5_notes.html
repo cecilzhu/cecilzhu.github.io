@@ -18,20 +18,20 @@
   
   <title>流星聚集地</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="html5笔记   * { margin: 0; padding: 0; } #div1 {background: red; width: 200px; height: 150px;} #allmap {width: 800px;height:500px;}     	 		播放/暂停  		大 		中 		小 		 			1 			0.5 			0">
+  <meta name="description" content="html5笔记   * { margin: 0; padding: 0; } #div1 {background: red; width: 200px; height: 150px;} #allmap {width: 400px;height:300px;}     	 		播放/暂停  		大 		中 		小 		 			1 			0.5 			0">
 <meta name="keywords" content="慢才后生,博客,个人网站,学习,分享">
 <meta property="og:type" content="website">
 <meta property="og:title" content="流星聚集地">
 <meta property="og:url" content="http://yoursite.com/MyProjects/html5_notes.html">
 <meta property="og:site_name" content="流星聚集地">
-<meta property="og:description" content="html5笔记   * { margin: 0; padding: 0; } #div1 {background: red; width: 200px; height: 150px;} #allmap {width: 800px;height:500px;}     	 		播放/暂停  		大 		中 		小 		 			1 			0.5 			0">
+<meta property="og:description" content="html5笔记   * { margin: 0; padding: 0; } #div1 {background: red; width: 200px; height: 150px;} #allmap {width: 400px;height:300px;}     	 		播放/暂停  		大 		中 		小 		 			1 			0.5 			0">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="file:///C:/Users/lenovo/Desktop/慢才后生的网页/139081019660.jpg">
 <meta property="og:image" content="https://www.runoob.com/images/img_the_scream.jpg">
-<meta property="og:updated_time" content="2019-06-26T03:09:03.035Z">
+<meta property="og:updated_time" content="2019-06-26T07:12:21.286Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="流星聚集地">
-<meta name="twitter:description" content="html5笔记   * { margin: 0; padding: 0; } #div1 {background: red; width: 200px; height: 150px;} #allmap {width: 800px;height:500px;}     	 		播放/暂停  		大 		中 		小 		 			1 			0.5 			0">
+<meta name="twitter:description" content="html5笔记   * { margin: 0; padding: 0; } #div1 {background: red; width: 200px; height: 150px;} #allmap {width: 400px;height:300px;}     	 		播放/暂停  		大 		中 		小 		 			1 			0.5 			0">
 <meta name="twitter:image" content="file:///C:/Users/lenovo/Desktop/慢才后生的网页/139081019660.jpg">
   
   
@@ -103,7 +103,7 @@ margin: 0;
 padding: 0;
 }
 #div1 {background: red; width: 200px; height: 150px;}
-#allmap {width: 800px;height:500px;}
+#allmap {width: 400px;height:300px;}
 </style>
 
 </head>
@@ -143,8 +143,8 @@ padding: 0;
 	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
 	<form>
-		<label for="button">百度一下</label>
-		<input type="button" id="button" value="百度" onclick="baidu()" style="cursor: pointer;">
+		<label for="button">百度一下</label>	
+		<input type="button" id="button" value="百度一下" onclick="window.location.href='http://www.baidu.com';">
 	</form>
 <div id="allmap"></div>
 <p id="demo">点击按钮获取您当前坐标：</p>
@@ -164,7 +164,7 @@ function getLocation()
 	  var crd = pos.coords;
 	  // 百度地图API功能
 	  var map = new BMap.Map("allmap"); // 创建Map实例
-	  map.centerAndZoom(new BMap.Point(crd.longitude,crd.latitude), 19); // 初始化地图,设置中心点坐标和地图级别
+	  map.centerAndZoom(new BMap.Point(crd.longitude,crd.latitude), 16); // 初始化地图,设置中心点坐标和地图级别
 	  map.addControl(new BMap.MapTypeControl()); //添加地图类型控件
 	 // map.setCurrentCity("上海"); // 设置地图显示的城市 此项是必须设置的
 	  map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
@@ -186,7 +186,7 @@ function getLocation()
 
 
 </script>
-<canvas id="mycanvas" style="background: gray" width="612" height="280"></canvas>
+<canvas id="mycanvas" style="background: gray" width="412" height="280"></canvas>
 <img id="scream" src="https://www.runoob.com/images/img_the_scream.jpg" width="120" height="140">
 <select id="select-mycanvas" onchange="mycanvas()">
 	<option value selected="selected" disabled>选择形状</option>
@@ -255,15 +255,7 @@ function mycanvas(){
 		drawImage(ctx);
 	}
 }
-
 </script>	
-	
-<script>
-function baidu() {
-window.location="http://www.baidu.com";
-}
-</script>
-
 <script>
     function drag(ev) {
         ev.dataTransfer.setData("Text", ev.target.id);
@@ -339,7 +331,7 @@ function volume()
 
     <footer class="entry-meta">
     <a href="/MyProjects/html5_notes.html">
-    <time datetime="2019-06-26T06:11:14.407Z" class="entry-date">
+    <time datetime="2019-06-26T07:12:21.286Z" class="entry-date">
         2019-06-26
     </time>
 </a>
