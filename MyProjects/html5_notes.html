@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="file:///C:/Users/lenovo/Desktop/慢才后生的网页/139081019660.jpg">
 <meta property="og:image" content="https://www.runoob.com/images/img_the_scream.jpg">
-<meta property="og:updated_time" content="2019-06-26T07:32:01.359Z">
+<meta property="og:updated_time" content="2019-06-26T10:08:00.924Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="流星聚集地">
 <meta name="twitter:description" content="html5笔记   * { margin: 0; padding: 0; } #div1 {background: red; width: 200px; height: 150px;} #allmap {width: 400px;height:300px;}     	 		播放/暂停  		大 		中 		小 		 			1 			0.5 			0">
@@ -148,44 +148,10 @@ padding: 0;
 	</form>
 <div id="allmap"></div>
 <p id="demo">点击按钮获取您当前坐标：</p>
-<button onclick="getLocation()">获取位置</button>
-
-<script>
-var x=document.getElementById("demo");
-function getLocation()
-{
-	var options = {
-	  enableHighAccuracy: true,
-	  timeout: 10000,
-	  maximumAge: 0
-	}
-
-	function success(pos) {
-	  var crd = pos.coords;
-	  // 百度地图API功能
-	  var map = new BMap.Map("allmap"); // 创建Map实例
-	  map.centerAndZoom(new BMap.Point(crd.longitude,crd.latitude), 16); // 初始化地图,设置中心点坐标和地图级别
-	  map.addControl(new BMap.MapTypeControl()); //添加地图类型控件
-	 // map.setCurrentCity("上海"); // 设置地图显示的城市 此项是必须设置的
-	  map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
-	  map.geolocation({maximumAge:10  // 清除缓存});
-
-	  x.innerHTML = '您的当前位置:纬度: ' + crd.latitude + '经度: ' + crd.longitude + '误差 ' + crd.accuracy+'米';
-	}
-
-	function error(err) {
-	  console.warn('ERROR(' + err.code + '): ' + err.message);
-	};
-
-	if (navigator.geolocation){
-		navigator.geolocation.getCurrentPosition(success, error, options);
-	}else{
-		x.innerHTML="该浏览器不支持获取地理位置。";
-	}
-}
+<button onclick="getLocation()">获取位置</button><br>
 
 
-</script>
+
 <canvas id="mycanvas" style="background: gray" width="412" height="280"></canvas>
 <img id="scream" src="https://www.runoob.com/images/img_the_scream.jpg" width="120" height="140">
 <select id="select-mycanvas" onchange="mycanvas()">
@@ -324,6 +290,48 @@ function volume()
 }
 </script>
 
+<script>
+var x=document.getElementById("demo");
+	
+	 // 百度地图API功能
+	var map = new BMap.Map("allmap");
+	map.centerAndZoom(new BMap.Point(116.331398,39.897445),16);
+	map.enableScrollWheelZoom(true);
+
+function getLocation(){
+	console.log(1);
+	var options = {
+	  enableHighAccuracy: true,
+	  timeout: 10000,
+	  maximumAge: 0
+	};
+
+	function success(pos) {
+	  var crd = pos.coords;
+	  // 百度地图API功能
+
+		//map.clearOverlays(); 
+		var new_point = new BMap.Point(crd.longitude,crd.latitude);
+		var marker = new BMap.Marker(new_point);  // 创建标注
+		map.addOverlay(marker);              // 将标注添加到地图中
+		map.panTo(new_point);      
+
+	  x.innerHTML = '您的当前位置:纬度: ' + crd.latitude + '经度: ' + crd.longitude + '误差 ' + crd.accuracy+'米';
+	}
+
+	function error(err) {
+	  console.warn('ERROR(' + err.code + '): ' + err.message);
+	}
+
+	if (navigator.geolocation){
+		navigator.geolocation.getCurrentPosition(success, error, options);
+	}else{
+		x.innerHTML="该浏览器不支持获取地理位置。";
+	}
+}
+
+
+</script>
 </body>
 </html>
       
@@ -331,7 +339,7 @@ function volume()
 
     <footer class="entry-meta">
     <a href="/MyProjects/html5_notes.html">
-    <time datetime="2019-06-26T07:32:01.359Z" class="entry-date">
+    <time datetime="2019-06-26T10:08:00.924Z" class="entry-date">
         2019-06-26
     </time>
 </a>
