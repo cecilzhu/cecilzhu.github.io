@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  
+  <meta name="description" content="慢才后生的个人博客">
+  
+
+  
+  <meta name="keywords" content="慢才后生,博客,个人网站,学习,分享">
+  
+  
+  
+  
+  
+  
+  <title>流星聚集地</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="html5笔记   * { margin: 0; padding: 0; } #div1 {background: red; width: 200px; height: 150px;} #allmap {width: 800px;height:500px;}     	 		播放/暂停  		大 		中 		小 		 			1 			0.5 			0">
+<meta name="keywords" content="慢才后生,博客,个人网站,学习,分享">
+<meta property="og:type" content="website">
+<meta property="og:title" content="流星聚集地">
+<meta property="og:url" content="http://yoursite.com/MyProjects/html5笔记.html">
+<meta property="og:site_name" content="流星聚集地">
+<meta property="og:description" content="html5笔记   * { margin: 0; padding: 0; } #div1 {background: red; width: 200px; height: 150px;} #allmap {width: 800px;height:500px;}     	 		播放/暂停  		大 		中 		小 		 			1 			0.5 			0">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="file:///C:/Users/lenovo/Desktop/慢才后生的网页/139081019660.jpg">
+<meta property="og:image" content="https://www.runoob.com/images/img_the_scream.jpg">
+<meta property="og:updated_time" content="2019-06-26T03:09:03.035Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="流星聚集地">
+<meta name="twitter:description" content="html5笔记   * { margin: 0; padding: 0; } #div1 {background: red; width: 200px; height: 150px;} #allmap {width: 800px;height:500px;}     	 		播放/暂停  		大 		中 		小 		 			1 			0.5 			0">
+<meta name="twitter:image" content="file:///C:/Users/lenovo/Desktop/慢才后生的网页/139081019660.jpg">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="流星聚集地" rel="home">流星聚集地</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">--灵感的源泉(⑅˃◡˂⑅)</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/about">关于</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/MyProjects">我的项目</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">记录</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">首页</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="page-" class="page- post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/MyProjects/html5笔记.html" data-id="cjxcqq1tx0000dorqshfroi4a" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>html5笔记</title>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=fft5rG0OGkhTSPABMsnEplwBXVrM1Nvi"></script>
+<style>
+* {
+margin: 0;
+padding: 0;
+}
+#div1 {background: red; width: 200px; height: 150px;}
+#allmap {width: 800px;height:500px;}
+</style>
+
+</head>
+<body>
+	<div style="text-align:center;height: 346px;">
+		<button onclick="playPause()">播放/暂停</button> 
+		<button onclick="makeBig()">大</button>
+		<button onclick="makeNormal()">中</button>
+		<button onclick="makeSmall()">小</button>
+		<select id="select" onchange="volume()">
+			<option value="L">1</option>
+			<option value="M">0.5</option>
+			<option value="S">0</option>
+		</select>
+		<br> 
+		<video id="video1" width="420" controls poster="file:///C:/Users/lenovo/Desktop/慢才后生的网页/139081019660.jpg">	
+		<!-- autoplay muted静音下自动播放video,兼容Chrome -->
+			<!-- mp4兼容IE,Safari和Chrome。ogg(优),webm兼容Chrome,Firefox和Opera -->
+			<source type="video/ogg" src="file:///C:/Users/lenovo/Desktop/慢才后生的网页/《奇幻森林》中文预告国语流畅.ogg">
+			
+			<source src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4" type="video/mp4">
+			<source src="http://www.w3school.com.cn/i/movie.ogg" type="video/ogg">
+			Your browser does not support HTML5 video.
+		</video>
+	</div>
+	
+	<audio controls autoplay loop style="background: red;">	
+	<!-- autoplay自动播放audio,video(IE可行) -->
+		<source type="audio/mp3" src="file:///C:/Users/lenovo/Desktop/慢才后生的网页/Adventure_Of_A_Lifetime-Coldplay.mp3">
+	</audio>
+
+	<a href="mailto:1260750674@qq.com;z1260750674@gmail.com?cc=name1@163.com&bcc=name2@139.com
+	&subject=哈%20哈
+	&body=邮%20件%20内%20容" target="_blank">邮箱链接</a>
+
+	<img id="drag1" src="file:///C:/Users/lenovo/Desktop/慢才后生的网页/139081019660.jpg" draggable="true" ondragstart="drag(event)" heidth="336px" height="69px">
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+	<form>
+		<label for="button">百度一下</label>
+		<input type="button" id="button" value="百度" onclick="baidu()" style="cursor: pointer;">
+	</form>
+<div id="allmap"></div>
+<p id="demo">点击按钮获取您当前坐标：</p>
+<button onclick="getLocation()">获取位置</button>
+
+<script>
+var x=document.getElementById("demo");
+function getLocation()
+{
+	var options = {
+	  enableHighAccuracy: true,
+	  timeout: 10000,
+	  maximumAge: 0
+	}
+
+	function success(pos) {
+	  var crd = pos.coords;
+	  // 百度地图API功能
+	  var map = new BMap.Map("allmap"); // 创建Map实例
+	  map.centerAndZoom(new BMap.Point(crd.longitude,crd.latitude), 19); // 初始化地图,设置中心点坐标和地图级别
+	  map.addControl(new BMap.MapTypeControl()); //添加地图类型控件
+	 // map.setCurrentCity("上海"); // 设置地图显示的城市 此项是必须设置的
+	  map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+	  
+
+	  x.innerHTML = '您的当前位置:纬度: ' + crd.latitude + '经度: ' + crd.longitude + '误差 ' + crd.accuracy+'米';
+	}
+
+	function error(err) {
+	  console.warn('ERROR(' + err.code + '): ' + err.message);
+	};
+
+	if (navigator.geolocation){
+		navigator.geolocation.getCurrentPosition(success, error, options);
+	}else{
+		x.innerHTML="该浏览器不支持获取地理位置。";
+	}
+}
+
+
+</script>
+<canvas id="mycanvas" style="background: gray" width="612" height="280"></canvas>
+<img id="scream" src="https://www.runoob.com/images/img_the_scream.jpg" width="120" height="140">
+<select id="select-mycanvas" onchange="mycanvas()">
+	<option value selected="selected" disabled>选择形状</option>
+	<option value="rect">矩形</option>
+	<option value="line">线条</option>
+	<option value="arc">圆</option>
+	<option value="text">文本</option>
+	<option value="linear">径向渐变</option>
+	<option value="img">画布图像</option>
+</select>
+
+<script type="text/javascript">
+function mycanvas(){
+	var c = document.getElementById("mycanvas");
+	var ctx = c.getContext("2d");
+	function rect(obj){
+		obj.fillStyle="#FF0000";
+		obj.fillRect(0,0,150,75);
+		/*
+			obj.rect(0,0,150,75);
+			obj.fill();
+		*/
+	}
+	function line(obj){
+		obj.moveTo(0,0);
+		obj.lineTo(200,100);
+		obj.stroke();
+	}
+	function arc(obj){
+		obj.beginPath();
+		obj.arc(95,60,40,0,2*Math.PI);
+		obj.stroke();
+	}
+	function text(obj){
+		obj.font="30px Arial";
+		obj.fillText("Hello World",10,50);
+	}
+	function linear(obj){
+		// 创建渐变
+		var grd=obj.createLinearGradient(0,0,200,0); //圆渐变 createRadialGradient()
+		grd.addColorStop(0,"red");
+		grd.addColorStop(1,"white");
+		 
+		// 填充渐变
+		obj.fillStyle=grd;
+		obj.fillRect(10,10,150,80);
+	}
+	function drawImage(obj){
+		var img=document.getElementById("scream");
+		obj.drawImage(img,10,10);
+	}
+
+
+	var select = document.getElementById("select-mycanvas");
+	if(select.value==="rect"){
+		rect(ctx);
+	}else if(select.value==="line"){
+		line(ctx);
+	}else if(select.value==="arc"){
+		arc(ctx);
+	}else if(select.value==="text"){
+		text(ctx);
+	}else if(select.value==="linear"){
+		linear(ctx);
+	}else if(select.value==="img"){
+		drawImage(ctx);
+	}
+}
+
+</script>	
+	
+<script>
+function baidu() {
+window.location="http://www.baidu.com";
+}
+</script>
+
+<script>
+    function drag(ev) {
+        ev.dataTransfer.setData("Text", ev.target.id);
+        //alert(ev.target.id);
+    }
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+    function drop(ev) {
+        var data = ev.dataTransfer.getData("Text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+</script>
+
+<script type="text/javascript">
+var myVideo = document.getElementById("video1");
+function playPause()
+{ 
+if (myVideo.paused) 
+  myVideo.play(); 
+else 
+  myVideo.pause(); 
+} 
+function makeBig()
+{ 
+myVideo.width= "560"; 
+} 
+function makeSmall()
+{ 
+myVideo.width= "320"; 
+} 
+function makeNormal()
+{ 
+myVideo.width= "420"; 
+} 
+
+
+var select = document.getElementById("select");
+function volume()
+{ 
+	if(select.value==='L')
+	myVideo.volume = 1;
+	else if(select.value==='M')
+	myVideo.volume = 0.5;
+	else if (select.value==='S')
+	myVideo.volume = 0;
+	//已选option的 索引，value，音量
+	alert("index:"+select.selectedIndex + "\n value:" + select.value + "\n 音量:"+ myVideo.volume);
+	/* select.options[select.selectedIndex].value, select[select.selectedIndex].value 同 select.value */
+	//console.log(select.innerHTML); //select.innerText没有反应？？？
+	
+	//注意：select.options[select.selectedIndex] 与 select[select.selectedIndex] 完全相同!!
+	
+	//获取下拉列表 已选项的内容 的两种方式(select.options[select.selectedIndex].innerHTML 同 select.options[select.selectedIndex].text)
+	/*
+		//select对象中 索引为selectedIndex的 option选项的内容
+		alert("选项内容:" + select.options[select.selectedIndex].innerHTML);
+	*/
+	/*
+		 for (var i=0;i<select.length;i++) {//下拉框的长度就是它的选项数.
+			if (select.options[i].selected == true ) 
+			alert("选项内容:" + select.options[i].text);//获取 当前选择项 的文本(text属性设置或返回的是包含在 <option> 元素中的纯文本).
+		}
+		 // 其实本质就是：alert("选项内容:" + select.options[select.selectedIndex].text);
+	*/	
+}
+</script>
+
+</body>
+</html>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/MyProjects/html5笔记.html">
+    <time datetime="2019-06-26T03:09:03.035Z" class="entry-date">
+        2019-06-26
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//baidu.com/s">
+    <div>
+        <input type="text" value name="wd" id="s">
+        <input type="submit" id="searchsubmit" value="百度一下">
+    </div>
+</form></aside>
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">音乐</h3>
+    <div class="widget-content">
+      <audio src="http://www.ytmp3.cn/down/36706.mp3" controls="controls" style="width:100%">
+        您的浏览器不支持 audio 标签。
+      </audio>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-content">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/other/">其它</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/learning/">学习</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/movies/">电影</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/musics/">音乐</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2019/06/06/github-图床/">github 图床</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/06/图片包含于文章/">图片包含于文章</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/05/前路茫茫/">前路茫茫</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/25/a-success/">a success</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/25/Never-letting-Go/">Never letting Go</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/index/" style="font-size: 10px;">index</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/jq/" style="font-size: 10px;">jq</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/new实例化/" style="font-size: 10px;">new实例化</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/wamp-server/" style="font-size: 10px;">wamp server</a> <a href="/tags/国片新星/" style="font-size: 10px;">国片新星</a> <a href="/tags/构造方法/" style="font-size: 10px;">构造方法</a> <a href="/tags/滚动条高度/" style="font-size: 10px;">滚动条高度</a> <a href="/tags/难难难/" style="font-size: 10px;">难难难</a>
+    </div>
+  </aside>
+
+  
+</div>
+      </div>
+      <a href="#" style="position: fixed;right: 10%;bottom:10%;width:26px;height:30px;line-height:30px;border: 1px solid #b18686;text-align: center;text-decoration: none;color:#4d5a2d;cursor: pointer;">Top</a>
+<footer id="colophon" style="text-align: center;" role="contentinfo">
+    <p>&copy; 2019 慢才后生
+    All rights reserved.</p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
