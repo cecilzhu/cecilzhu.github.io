@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="file:///C:/Users/lenovo/Desktop/慢才后生的网页/139081019660.jpg">
 <meta property="og:image" content="https://www.runoob.com/images/img_the_scream.jpg">
-<meta property="og:updated_time" content="2019-06-26T11:01:02.193Z">
+<meta property="og:updated_time" content="2019-06-27T02:07:32.535Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="流星聚集地">
 <meta name="twitter:description" content="html5笔记   * { margin: 0; padding: 0; } #div1 {background: red; width: 200px; height: 150px;} #allmap {width: 400px;height:300px;}     	 		播放/暂停  		大 		中 		小 		 			1 			0.5 			0">
@@ -96,7 +96,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>html5笔记</title>
-<script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=fft5rG0OGkhTSPABMsnEplwBXVrM1Nvi"></script>
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=fft5rG0OGkhTSPABMsnEplwBXVrM1Nvi&s=1"></script>
 <style>
 * {
 margin: 0;
@@ -292,7 +292,7 @@ function volume()
 
 <script>
 window.HOST_TYPE = '2'
-var x=document.getElementById("demo");
+var demo=document.getElementById("demo");
 	
 	 // 百度地图API功能
 	var map = new BMap.Map("allmap");
@@ -343,8 +343,8 @@ function getLocation(){
         pointArr.push(ggPoint);
         convertor.translate(pointArr, 1, 5, translateCallback)
     }, 1000);
-
-	  x.innerHTML = '您的当前位置:纬度: ' + crd.latitude + '经度: ' + crd.longitude + '误差 ' + crd.accuracy+'米';
+console.log(x);
+	  demo.innerHTML = '您的当前位置:纬度: ' + y + '经度: ' + x + '误差 ' + crd.accuracy+'米';
 	}
 
 	function error(err) {
@@ -367,8 +367,8 @@ function getLocation(){
 
     <footer class="entry-meta">
     <a href="/MyProjects/html5_notes.html">
-    <time datetime="2019-06-26T11:01:02.193Z" class="entry-date">
-        2019-06-26
+    <time datetime="2019-06-27T02:07:32.535Z" class="entry-date">
+        2019-06-27
     </time>
 </a>
     
