@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="file:///C:/Users/lenovo/Desktop/慢才后生的网页/139081019660.jpg">
 <meta property="og:image" content="https://www.runoob.com/images/img_the_scream.jpg">
-<meta property="og:updated_time" content="2019-06-27T07:57:49.689Z">
+<meta property="og:updated_time" content="2019-06-27T08:43:27.957Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="流星聚集地">
 <meta name="twitter:description" content="html5笔记   * { margin: 0; padding: 0; } #div1 {background: red; width: 200px; height: 150px;} #allmap {width: 400px;height:300px;}     	 		播放/暂停  		大 		中 		小 		 			1 			0.5 			0">
@@ -147,7 +147,8 @@ padding: 0;
 		<input type="button" id="button" value="百度一下" onclick="window.location.href='http://www.baidu.com';">
 	</form>
 <div id="allmap"></div>
-<p id="demo">点击按钮获取您当前坐标：</p>
+WGS84	坐标：<p id="demo1"></p>
+百度去偏坐标：<p id="demo2"></p>
 <button onclick="getLocation()">获取位置</button><br>
 
 
@@ -292,8 +293,8 @@ function volume()
 
 <script>
 window.HOST_TYPE = '2'
-var demo=document.getElementById("demo");
-	
+var demo1=document.getElementById("demo1");
+var demo2=document.getElementById("demo2");	
 	 // 先定位到 北京
 	var bm = new BMap.Map("allmap");
 	bm.centerAndZoom(new BMap.Point(116.331398,39.897445),10);
@@ -310,38 +311,39 @@ function getLocation(){
 	function success(pos) {
 
 	  var crd = pos.coords;
-    //直接定位到 GPS坐标
-    var x = crd.longitude; //经度
-    var y = crd.latitude;  //纬度
-    console.log(crd);
-    //x = 121.4797129076,y = 31.2950211612;
-    var ggPoint = new BMap.Point(x,y);
-    bm.centerAndZoom(ggPoint, 15);
+	    //直接定位到 GPS坐标
+	    var x = crd.longitude; //经度
+	    var y = crd.latitude;  //纬度
+	    demo1.innerHTML = '纬度: ' + y + ' 经度: ' + x + '误差 ' + crd.accuracy+'米';
+	    
+	    //x = 121.4797129076,y = 31.2950211612;
+	    var ggPoint = new BMap.Point(x,y);
+	    bm.centerAndZoom(ggPoint, 15);
 
-    //添加gps marker和label
-    var markergg = new BMap.Marker(ggPoint);
-    bm.addOverlay(markergg); //添加GPS marker
-    var labelgg = new BMap.Label("未转换的GPS坐标（错误）",{offset:new BMap.Size(20,-10)});
-    markergg.setLabel(labelgg); //添加GPS label
+	    //添加gps marker和label
+	    var markergg = new BMap.Marker(ggPoint);
+	    bm.addOverlay(markergg); //添加GPS marker
+	    var labelgg = new BMap.Label("未转换的GPS坐标（错误）",{offset:new BMap.Size(20,-10)});
+	    markergg.setLabel(labelgg); //添加GPS label
 
-    //坐标转换完之后的回调函数
-    translateCallback = function (data){
-      if(data.status === 0) {
-        var marker = new BMap.Marker(data.points[0]);
-        bm.addOverlay(marker);
-        var label = new BMap.Label("转换后的百度坐标（正确）",{offset:new BMap.Size(20,-10)});
-        marker.setLabel(label); //添加百度label
-        bm.setCenter(data.points[0]); //以正确标记作为 地图中心
-      }
-    }
+	    //坐标转换完之后的回调函数
+	    translateCallback = function (data){
+	      if(data.status === 0) {
+	        var marker = new BMap.Marker(data.points[0]);
+	        bm.addOverlay(marker);
+	        var label = new BMap.Label("转换后的百度坐标（正确）",{offset:new BMap.Size(20,-10)});
+	        marker.setLabel(label); //添加百度label
+	        bm.setCenter(data.points[0]); //以正确标记作为 地图中心
+	        demo2.innerHTML = '纬度: ' + data.points[0].lat + ' 经度: ' + data.points[0].lng;
+	      }
+	    }
 
-    setTimeout(function(){
-        var convertor = new BMap.Convertor();
-        var pointArr = [];
-        pointArr.push(ggPoint);
-        convertor.translate(pointArr,1,5,translateCallback)
-    }, 1000);
-	  demo.innerHTML = '您的当前位置:纬度: ' + y + '经度: ' + x + '误差 ' + crd.accuracy+'米';
+	    setTimeout(function(){
+	        var convertor = new BMap.Convertor();
+	        var pointArr = [];
+	        pointArr.push(ggPoint);
+	        convertor.translate(pointArr,1,5,translateCallback)
+	    }, 1000);
 	}
 
 	function error(err) {
@@ -352,7 +354,7 @@ function getLocation(){
 	if (navigator.geolocation){
 		navigator.geolocation.getCurrentPosition(success, error, options);
 	}else{
-		x.innerHTML="该浏览器不支持获取地理位置。";
+		demo1.innerHTML="该浏览器不支持获取地理位置。";
 	}
 }
 
@@ -365,7 +367,7 @@ function getLocation(){
 
     <footer class="entry-meta">
     <a href="/MyProjects/html5_notes.html">
-    <time datetime="2019-06-27T07:57:49.689Z" class="entry-date">
+    <time datetime="2019-06-27T08:43:27.957Z" class="entry-date">
         2019-06-27
     </time>
 </a>
