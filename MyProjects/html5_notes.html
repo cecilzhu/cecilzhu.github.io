@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="file:///C:/Users/lenovo/Desktop/慢才后生的网页/139081019660.jpg">
 <meta property="og:image" content="https://www.runoob.com/images/img_the_scream.jpg">
-<meta property="og:updated_time" content="2019-06-27T02:07:32.535Z">
+<meta property="og:updated_time" content="2019-06-27T07:55:57.911Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="流星聚集地">
 <meta name="twitter:description" content="html5笔记   * { margin: 0; padding: 0; } #div1 {background: red; width: 200px; height: 150px;} #allmap {width: 400px;height:300px;}     	 		播放/暂停  		大 		中 		小 		 			1 			0.5 			0">
@@ -85,7 +85,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/MyProjects/html5_notes.html" data-id="cjxcuc56q0000g8rql1lk7hza" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/MyProjects/html5_notes.html" data-id="cjxedisx4001epcrq86951rvu" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -294,31 +294,29 @@ function volume()
 window.HOST_TYPE = '2'
 var demo=document.getElementById("demo");
 	
-	 // 百度地图API功能
-	var map = new BMap.Map("allmap");
-	map.centerAndZoom(new BMap.Point(116.331398,39.897445),16);
-	map.enableScrollWheelZoom(true);
+	 // 先定位到 北京
+	var bm = new BMap.Map("allmap");
+	bm.centerAndZoom(new BMap.Point(116.331398,39.897445),10);
+	bm.addControl(new BMap.NavigationControl());
+	bm.enableScrollWheelZoom(true);
 
 function getLocation(){
 	var options = {
 	  enableHighAccuracy: true,
-	  timeout: 10000,
+	  timeout: 5000,
 	  maximumAge: 0
 	};
 
 	function success(pos) {
-	  var crd = pos.coords;
-	      // 百度地图API功能
-    //GPS坐标
-    var x = crd.longitude;
-    var y = crd.latitude;
-    var ggPoint = new BMap.Point(x,y);
 
-    //地图初始化
-    var bm = new BMap.Map("allmap");
+	  var crd = pos.coords;
+    //直接定位到 GPS坐标
+    var x = crd.longitude; //经度
+    var y = crd.latitude;  //纬度
+    console.log(crd);
+    //x = 121.4797129076,y = 31.2950211612;
+    var ggPoint = new BMap.Point(x,y);
     bm.centerAndZoom(ggPoint, 15);
-    bm.addControl(new BMap.NavigationControl());
-    bm.enableScrollWheelZoom(true);
 
     //添加gps marker和label
     var markergg = new BMap.Marker(ggPoint);
@@ -333,7 +331,7 @@ function getLocation(){
         bm.addOverlay(marker);
         var label = new BMap.Label("转换后的百度坐标（正确）",{offset:new BMap.Size(20,-10)});
         marker.setLabel(label); //添加百度label
-        bm.setCenter(data.points[0]);
+        bm.setCenter(data.points[0]); //以正确标记作为 地图中心
       }
     }
 
@@ -341,9 +339,8 @@ function getLocation(){
         var convertor = new BMap.Convertor();
         var pointArr = [];
         pointArr.push(ggPoint);
-        convertor.translate(pointArr, 1, 5, translateCallback)
+        convertor.translate(pointArr,3,5,translateCallback)
     }, 1000);
-console.log(x);
 	  demo.innerHTML = '您的当前位置:纬度: ' + y + '经度: ' + x + '误差 ' + crd.accuracy+'米';
 	}
 
@@ -351,6 +348,7 @@ console.log(x);
 	  console.warn('ERROR(' + err.code + '): ' + err.message);
 	}
 
+	//判断浏览器是否支持定位
 	if (navigator.geolocation){
 		navigator.geolocation.getCurrentPosition(success, error, options);
 	}else{
@@ -367,7 +365,7 @@ console.log(x);
 
     <footer class="entry-meta">
     <a href="/MyProjects/html5_notes.html">
-    <time datetime="2019-06-27T02:07:32.535Z" class="entry-date">
+    <time datetime="2019-06-27T07:55:57.911Z" class="entry-date">
         2019-06-27
     </time>
 </a>
