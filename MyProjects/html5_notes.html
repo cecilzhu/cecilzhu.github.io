@@ -27,7 +27,7 @@
 <meta property="og:description" content="html5笔记   * { margin: 0; padding: 0; } #div1 {background: red; width: 200px; height: 150px;} #allmap {width: 400px;height:300px;}     	 		播放/暂停  		大 		中 		小 		 			1 			0.5 			0">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://www.runoob.com/images/img_the_scream.jpg">
-<meta property="og:updated_time" content="2019-06-28T06:50:27.906Z">
+<meta property="og:updated_time" content="2019-06-28T07:43:58.938Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="流星聚集地">
 <meta name="twitter:description" content="html5笔记   * { margin: 0; padding: 0; } #div1 {background: red; width: 200px; height: 150px;} #allmap {width: 400px;height:300px;}     	 		播放/暂停  		大 		中 		小 		 			1 			0.5 			0">
@@ -166,19 +166,15 @@ WGS84	坐标：<p id="demo1"></p>
 
 <svg width="180" height="140" xmlns="http://www.w3.org/2000/svg">
  <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
-
- <g>
-  <title>Layer 1</title>
- </g>
- <g>
-  <title>background</title>
-  <path stroke="null" height="142" width="182" y="-1" x="-1" id="canvas_background" d="m-0.5,-0.49999l175.99999,0l0,141.99998l-175.99999,0l0,-141.99998z" stroke-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="null" fill-opacity="null" fill="#fff"/>
-  <g display="none" id="canvasGrid">
-   <rect fill="url(#gridpattern)" stroke-width="0" y="1" x="1" height="480" width="640" id="svg_3"/>
-  </g>
-  <rect id="svg_1" height="60" width="120" y="40" x="30" stroke-width="1.5" fill="#fff" stroke="#000"/>
-  <ellipse ry="30" rx="26" id="svg_2" cy="70" cx="90" stroke-width="1.5" stroke="#000" fill="#fff"/>
- </g>
+	<g>
+		<title>SVG</title>
+		<path stroke="null" height="142" width="182" y="-1" x="-1" id="canvas_background" d="m-0.5,-0.49999l175.99999,0l0,141.99998l-175.99999,0l0,-141.99998z" stroke-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="null" fill-opacity="null" fill="#fff"/>
+		<g display="none" id="canvasGrid">
+		<rect fill="url(#gridpattern)" stroke-width="0" y="1" x="1" height="480" width="640" id="svg_3"/>
+		</g>
+		<rect id="svg_1" height="60" width="120" y="40" x="30" stroke-width="1.5" fill="#fff" stroke="#000"/>
+		<ellipse ry="30" rx="26" id="svg_2" cy="70" cx="90" stroke-width="1.5" stroke="#000" fill="#fff"/>
+	</g>
 </svg>
 
 
@@ -242,15 +238,19 @@ function mycanvas(){
 </script>	
 <script>
     function drag(ev) {
+    	document.body.ondrop = function(event) {
+			event.preventDefault();	
+			event.stopPropagation();
+		}
         ev.dataTransfer.setData("Text", ev.target.id);
         //alert(ev.target.id);
     }
     function allowDrop(ev) {
-        ev.preventDefault();
+        ev.preventDefault(); //避免浏览器对数据的默认处理（drop 事件的默认行为是以链接形式打开）
     }
     function drop(ev) {
-        var data = ev.dataTransfer.getData("Text");
-        ev.target.appendChild(document.getElementById(data));
+        var data = ev.dataTransfer.getData("Text"); //返回在 setData() 方法中设置为相同类型的任何数据
+        ev.target.appendChild(document.getElementById(data)); //被拖数据是被拖元素的 id ("drag1")
     }
 </script>
 
@@ -384,7 +384,7 @@ function getLocation(){
 
     <footer class="entry-meta">
     <a href="/MyProjects/html5_notes.html">
-    <time datetime="2019-06-28T06:50:27.906Z" class="entry-date">
+    <time datetime="2019-06-28T07:43:58.938Z" class="entry-date">
         2019-06-28
     </time>
 </a>
