@@ -1,3 +1,3 @@
-var posts=["src/Never-letting-Go/","src/cloudflare区域DNS批量删除/","src/java class中的构造方法/","src/js,jq获取 滚动条高度 及 浏览器宽高/","src/js数据类型转换，及运算符/","src/js获取当前点击元素的索引/","src/shell及github-workflow初探/","src/telegram测试/","src/twikoo部署/","src/vercel部署方式探讨/","src/wamp server2.5版本 配置多站点/","src/使用surge发布前端项目/","src/数组去重的-5种方法/","src/流浪地球/"];function toRandomPost(){
+var posts=["posts/Never-letting-Go.html","posts/cloudflare区域DNS批量删除.html","posts/java class中的构造方法.html","posts/js,jq获取 滚动条高度 及 浏览器宽高.html","posts/js数据类型转换，及运算符.html","posts/js获取当前点击元素的索引.html","posts/shell及github-workflow初探.html","posts/telegram测试.html","posts/twikoo部署.html","posts/vercel部署方式探讨.html","posts/wamp server2.5版本 配置多站点.html","posts/使用surge发布前端项目.html","posts/数组去重的-5种方法.html","posts/流浪地球.html"];function toRandomPost(){
     pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);
   };
