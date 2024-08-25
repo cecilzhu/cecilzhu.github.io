@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>telegram测试</title>
+      <link href="/posts/telegram%E6%B5%8B%E8%AF%95.html"/>
+      <url>/posts/telegram%E6%B5%8B%E8%AF%95.html</url>
+      
+        <content type="html"><![CDATA[<p>[TOC]</p><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><blockquote><p>一、电报机器人快捷认证登录，登录成功后会返回 昵称，会话ID，和 用户名。<br>二、只能作为验证身份，获取用户部分信息使用。本地退出只能通过清除浏览器cookie中的token，若要完全退出该浏览器认证终端，须在 Telegram 手动终止。</p></blockquote><h3 id="效果（验证）"><a href="#效果（验证）" class="headerlink" title="效果（验证）:"></a>效果（验证）:</h3><div class="tip cogs"><p>须科学条件下，第一次进入该页面可能没有 按钮，再次 刷新 即可看到 登录按钮！！</p></div><script type="text/javascript">  function onTelegramAuth(user) {    alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');  }</script><div class="telegram-container"><strong>点击 登录按钮</strong><script async src="https://telegram.org/js/telegram-widget.js?22"data-telegram-login="Cecilzhubot"data-size="large"data-radius="20"data-onauth="onTelegramAuth(user)"data-request-access="write"></script></div><h3 id="图如下："><a href="#图如下：" class="headerlink" title="图如下："></a>图如下：</h3><p>1.登陆前，</p><img src="/posts/telegram%E6%B5%8B%E8%AF%95/telegram-1.png" class="" title="telegram-1"><p>2.在已登录telegram的设备中，进行第三方登录的确认，</p><img src="/posts/telegram%E6%B5%8B%E8%AF%95/telegram-2.jpg" class="" title="telegram-2"><p>3.登陆成功后，</p><img src="/posts/telegram%E6%B5%8B%E8%AF%95/telegram-3.jpg" class="" title="telegram-3"><img src="/posts/telegram%E6%B5%8B%E8%AF%95/telegram-4.png" class="" title="telegram-4"><p>4.退出，须清理对应cookie记录。</p><h3 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">function</span> <span class="title function_">onTelegramAuth</span>(<span class="params">user</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">alert</span>(<span class="string">&#x27;Logged in as &#x27;</span> + user.<span class="property">first_name</span> + <span class="string">&#x27; &#x27;</span> + user.<span class="property">last_name</span> + <span class="string">&#x27; (&#x27;</span> + user.<span class="property">id</span> + (user.<span class="property">username</span> ? <span class="string">&#x27;, @&#x27;</span> + user.<span class="property">username</span> : <span class="string">&#x27;&#x27;</span>) + <span class="string">&#x27;)&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;telegram-container&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>使用 Telegram 登录<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">&quot;https://telegram.org/js/telegram-widget.js?22&quot;</span></span></span><br><span class="line"><span class="tag"><span class="attr">data-telegram-login</span>=<span class="string">&quot;Cecilzhubot&quot;</span></span></span><br><span class="line"><span class="tag"><span class="attr">data-size</span>=<span class="string">&quot;large&quot;</span></span></span><br><span class="line"><span class="tag"><span class="attr">data-radius</span>=<span class="string">&quot;20&quot;</span></span></span><br><span class="line"><span class="tag"><span class="attr">data-onauth</span>=<span class="string">&quot;onTelegramAuth(user)&quot;</span></span></span><br><span class="line"><span class="tag"><span class="attr">data-request-access</span>=<span class="string">&quot;write&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 其它 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>shell及githubworkflow初探</title>
+      <link href="/posts/shell%E5%8F%8Agithub-workflow%E5%88%9D%E6%8E%A2.html"/>
+      <url>/posts/shell%E5%8F%8Agithub-workflow%E5%88%9D%E6%8E%A2.html</url>
+      
+        <content type="html"><![CDATA[<p>[TOC]</p><p>vercel成功部署后，通过githubAPI 将vercel项目的“预览链接” 赋值给github的environment URL</p><h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><img src="/posts/shell%E5%8F%8Agithub-workflow%E5%88%9D%E6%8E%A2/1-environment-url.png" class="" title="1-environment-url"><span id="more"></span><h3 id="一、将github仓库项目部署到vercel"><a href="#一、将github仓库项目部署到vercel" class="headerlink" title="一、将github仓库项目部署到vercel"></a>一、将github仓库项目部署到vercel</h3><p>可指定项目，“–name“字段貌似可简写为“-n“，后可加“vercel项目名”，或“vercel项目ID”</p><img src="/posts/shell%E5%8F%8Agithub-workflow%E5%88%9D%E6%8E%A2/2-%E9%83%A8%E7%BD%B2%E5%88%B0Vercel-%E6%8C%87%E5%AE%9A%E9%A1%B9%E7%9B%AE.png" class="" title="2-部署到Vercel-指定项目"><h3 id="二、得到已关联“vercel项目”的-域名（可选）"><a href="#二、得到已关联“vercel项目”的-域名（可选）" class="headerlink" title="二、得到已关联“vercel项目”的 域名（可选）"></a>二、得到已关联“vercel项目”的 域名（可选）</h3><p>vercel项目名”或“vercel项目ID”,请求vercelAPI，以获取项目信息，提取域名。</p><img src="/posts/shell%E5%8F%8Agithub-workflow%E5%88%9D%E6%8E%A2/3-getVercelProjectInf-GET-domain.png" class="" title="3-getVercelProjectInf"><h3 id="三、创建“github发布状态”"><a href="#三、创建“github发布状态”" class="headerlink" title="三、创建“github发布状态”"></a>三、创建“github发布状态”</h3><p>请求githubAPI，“<a href="https://api.github.com/repos/$">https://api.github.com/repos/$</a>&#x2F;deployments“，会返回此次github提交的“github发布ID”，保存。</p><img src="/posts/shell%E5%8F%8Agithub-workflow%E5%88%9D%E6%8E%A2/4-%E5%88%9B%E5%BB%BAgithub%E5%8F%91%E5%B8%83%E7%8A%B6%E6%80%81-%E5%BE%97%E5%88%B0github%E5%8F%91%E5%B8%83ID.png" class="" title="4-创建github发布状态-得到github发布ID"><h3 id="四、更新“github发布状态”"><a href="#四、更新“github发布状态”" class="headerlink" title="四、更新“github发布状态”"></a>四、更新“github发布状态”</h3><p>使用“github发布ID”，请求githubAPI，将vercel平台提供的已部署vercel项目的“预览链接”赋值给github的environment URL</p><img src="/posts/shell%E5%8F%8Agithub-workflow%E5%88%9D%E6%8E%A2/5-%E6%A0%B9%E6%8D%AE%E8%AF%A5github%E5%8F%91%E5%B8%83ID%E6%9B%B4%E6%96%B0%E5%8F%91%E5%B8%83%E7%8A%B6%E6%80%81.png" class="" title="5-根据该github发布ID更新发布状态"><h3 id="五、deploy-yml完整代码（含-github仓库secret）："><a href="#五、deploy-yml完整代码（含-github仓库secret）：" class="headerlink" title="五、deploy.yml完整代码（含 github仓库secret）："></a>五、deploy.yml完整代码（含 github仓库secret）：</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">name: Deploy to Vercel</span><br><span class="line"></span><br><span class="line">on:</span><br><span class="line">  push:</span><br><span class="line">    branches:</span><br><span class="line">      - master</span><br><span class="line"></span><br><span class="line">jobs:</span><br><span class="line">  deploy:</span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line">    </span><br><span class="line">    steps:</span><br><span class="line">      - name: Checkout repository</span><br><span class="line">        uses: actions/checkout@v2</span><br><span class="line">    </span><br><span class="line">      - name: Install Vercel CLI</span><br><span class="line">        run: npm install -g vercel</span><br><span class="line">    </span><br><span class="line">      - name: Deploy to Vercel And Get Deployment URL</span><br><span class="line">        id: get-url</span><br><span class="line">        env:</span><br><span class="line">          VERCEL_TOKEN: $&#123;&#123; secrets.VERCEL_TOKEN &#125;&#125;</span><br><span class="line">        run: |</span><br><span class="line">          # 或不使用&quot;--name&quot;或&quot;-n&quot;指定部署到vercel中已存在的某个项目，而是默认使用git仓库名作为vercel项目名</span><br><span class="line">          # vercel --prod --token $&#123;&#123; secrets.VERCEL_TOKEN &#125;&#125; --yes</span><br><span class="line">          vercel --prod --token $&#123;&#123; secrets.VERCEL_TOKEN &#125;&#125; --yes --name $&#123;&#123;secrets.VERCEL_PROJECT_EAMON_ID&#125;&#125;</span><br><span class="line">          DEPLOYMENT_URL=$(vercel --token $&#123;&#123; secrets.VERCEL_TOKEN &#125;&#125; ls --prod | grep -o &#x27;https://[^ ]*&#x27; | head -n 1)</span><br><span class="line">          </span><br><span class="line">          # 1.可设置为 环境变量，在其他步骤使用</span><br><span class="line">          echo &quot;DEPLOYMENT_URL=$&#123;DEPLOYMENT_URL&#125;&quot; &gt;&gt; $GITHUB_ENV</span><br><span class="line">          # 2.将 $DEPLOYMENT_URL 的值 赋值给当前作业的 输出变量 DEPLOYMENT_URL，在其他步骤以“steps.get-url.outputs.DEPLOYMENT_URL“形式引用（即将废弃）</span><br><span class="line">          # echo &quot;::set-output name=DEPLOYMENT_URL::$DEPLOYMENT_URL&quot;</span><br><span class="line">          # 3.也可写入txt，在其他步骤使用（查看所有 环境变量，找到 环境变量DEPLOYMENT_URL的键值对，取其值，保存为txt文本 ）</span><br><span class="line">          cat $GITHUB_ENV | grep DEPLOYMENT_URL | cut -d&#x27;=&#x27; -f2 &gt; DEPLOYMENT_URL.txt</span><br><span class="line">          </span><br><span class="line">          a=$(cat DEPLOYMENT_URL.txt) # 赋值表达式“=“两边 不能有空格</span><br><span class="line">          echo $a</span><br><span class="line">          # 打印变量（含 环境变量）的 3种 方式：echo &quot;我是$a&quot;、echo &quot;我是$&#123;a&#125;&quot;、echo $a</span><br><span class="line">    </span><br><span class="line">      - name: Get Vercel Project Info</span><br><span class="line">        env:</span><br><span class="line">          VERCEL_TOKEN: $&#123;&#123; secrets.VERCEL_TOKEN &#125;&#125;</span><br><span class="line">        run: |</span><br><span class="line">         curl -s -H &quot;Authorization: Bearer $VERCEL_TOKEN&quot; https://api.vercel.com/v6/projects/$&#123;&#123;secrets.VERCEL_PROJECT_EAMON_ID&#125;&#125; &gt; vercel_project.json</span><br><span class="line">         cat vercel_project.json</span><br><span class="line">    </span><br><span class="line">      - name: Extract Custom Domain</span><br><span class="line">        run: |</span><br><span class="line">          # 提取 domain</span><br><span class="line">          DOMAIN=$(cat vercel_project.json | jq -r &#x27;.alias[0].domain // empty&#x27;)</span><br><span class="line">          echo &quot;Custom Domain: $DOMAIN&quot;</span><br><span class="line">          echo &quot;CUSTOM_DOMAIN=$&#123;DOMAIN&#125;&quot; &gt;&gt; $GITHUB_ENV</span><br><span class="line">          </span><br><span class="line">          # 若vercel平台待部署项目 未关联域名，则使用 DEPLOYMENT_URL作为environment_url【须以https开头】</span><br><span class="line">          if [ -z &quot;$DOMAIN&quot; ]; then</span><br><span class="line">            CUSTOM_DOMAIN=$DEPLOYMENT_URL</span><br><span class="line">          fi</span><br><span class="line">        </span><br><span class="line">      - name: Create deployment status on GitHub</span><br><span class="line">        env:</span><br><span class="line">          GITHUB_TOKEN: $&#123;&#123; secrets.GITHUB_TOKEN &#125;&#125;</span><br><span class="line">        run: |</span><br><span class="line">          curl -X POST \</span><br><span class="line">            -H &quot;Authorization: token $GITHUB_TOKEN&quot; \</span><br><span class="line">            -H &quot;Accept: application/vnd.github.v3+json&quot; \</span><br><span class="line">            https://api.github.com/repos/$&#123;&#123; github.repository &#125;&#125;/deployments \</span><br><span class="line">            -d &#x27;&#123;</span><br><span class="line">                  &quot;ref&quot;: &quot;master&quot;,</span><br><span class="line">                  &quot;environment&quot;: &quot;vercel-prod&quot;,</span><br><span class="line">                  &quot;description&quot;: &quot;Deployment to Vercel&quot;,</span><br><span class="line">                  &quot;auto_merge&quot;: false,</span><br><span class="line">                  &quot;required_contexts&quot;: [],</span><br><span class="line">                  &quot;payload&quot;: &#123;&#125;,</span><br><span class="line">                  &quot;transient_environment&quot;: false,</span><br><span class="line">                  &quot;production_environment&quot;: true</span><br><span class="line">                &#125;&#x27; | jq -r &#x27;.id&#x27; &gt; deployment_id.txt</span><br><span class="line">    </span><br><span class="line">                  # txt形式，不同步骤之间传递值</span><br><span class="line">                  DEPLOYMENT_ID=$(cat deployment_id.txt)</span><br><span class="line">                  # 或 环境变量 形式，不同步骤之间传递值</span><br><span class="line">                  echo &quot;DEPLOYMENT_ID=$&#123;DEPLOYMENT_ID&#125;&quot; &gt;&gt; $GITHUB_ENV</span><br><span class="line">          </span><br><span class="line">      - name: Update deployment status</span><br><span class="line">        env:</span><br><span class="line">          GITHUB_TOKEN: $&#123;&#123; secrets.GITHUB_TOKEN &#125;&#125;</span><br><span class="line">        run: |</span><br><span class="line">          DEPLOYMENT_URL=$(cat DEPLOYMENT_URL.txt)</span><br><span class="line">          DEPLOYMENT_ID=$(cat deployment_id.txt)</span><br><span class="line">          # 或 环境变量 DEPLOYMENT_ID=$&#123;&#123;env.DEPLOYMENT_ID&#125;&#125;</span><br><span class="line">          curl -X POST \</span><br><span class="line">            -H &quot;Authorization: token $GITHUB_TOKEN&quot; \</span><br><span class="line">            -H &quot;Accept: application/vnd.github.v3+json&quot; \</span><br><span class="line">            https://api.github.com/repos/$&#123;&#123; github.repository &#125;&#125;/deployments/$&#123;DEPLOYMENT_ID&#125;/statuses \</span><br><span class="line">            -d &#x27;&#123;</span><br><span class="line">                  &quot;state&quot;: &quot;success&quot;,</span><br><span class="line">                  &quot;description&quot;: &quot;Deployment to Vercel successful&quot;,</span><br><span class="line">                  &quot;auto_inactive&quot;: true,</span><br><span class="line">                  &quot;log_url&quot;: &quot;&#x27;$&#123;DEPLOYMENT_URL&#125;&#x27;&quot;,</span><br><span class="line">                  &quot;environment_url&quot;: &quot;&#x27;https://$CUSTOM_DOMAIN&#x27;&quot;</span><br><span class="line">                &#125;&#x27;</span><br></pre></td></tr></table></figure><h3 id="六、注意事项"><a href="#六、注意事项" class="headerlink" title="六、注意事项"></a>六、注意事项</h3><p>“jobs输出变量”、“环境变量”在json中的不同书写方式，注意“引号”。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">job输出变量 书写</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">&quot;environment_url&quot;</span>: <span class="string">&quot;&#x27;<span class="variable">$&#123;&#123;steps.get-url.outputs.DEPLOYMENT_URL&#125;</span>&#125;&#x27;&quot;</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">环境变量 书写</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">&quot;log_url&quot;</span>: <span class="string">&quot;&#x27;&quot;</span><span class="variable">$&#123;&#123; env.DEPLOYMENT_URL &#125;</span>&#125;<span class="string">&quot;&#x27;&quot;</span>,</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">&quot;environment_url&quot;</span>: <span class="string">&quot;&#x27;<span class="variable">$&#123; DEPLOYMENT_URL &#125;</span>&#x27;&quot;</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">&quot;environment_url&quot;</span>: <span class="string">&quot;&#x27;<span class="variable">$DEPLOYMENT_URL</span>&#x27;&quot;</span></span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vercel </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vercel部署方式</title>
+      <link href="/posts/vercel%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F%E6%8E%A2%E8%AE%A8.html"/>
+      <url>/posts/vercel%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F%E6%8E%A2%E8%AE%A8.html</url>
+      
+        <content type="html"><![CDATA[<p>[TOC]</p><span id="more"></span><h4 id="一、本地vercel-cli手动部署"><a href="#一、本地vercel-cli手动部署" class="headerlink" title="一、本地vercel-cli手动部署"></a>一、本地vercel-cli手动部署</h4><p>在本地npm安装vercel-cli插件，cd 到本地项目目录；<br>选取第三方账号等方式，远程登录vercel，选择 待发布的 vercel项目名；<br>发布项目到 预览环境，或<code>vercel --prod</code>生产环境，成功后会输出 预览链接。</p><h4 id="二、vercel面板-直接部署"><a href="#二、vercel面板-直接部署" class="headerlink" title="二、vercel面板 直接部署"></a>二、vercel面板 直接部署</h4><p>登录vercel面板，导入github仓库，直接发布。<br>只要不断开vercel与git仓库的链接，git仓库有新推送，vercel便会同步部署。</p><h4 id="三、github-actions-VERCEL-TOKEN"><a href="#三、github-actions-VERCEL-TOKEN" class="headerlink" title="三、github actions + VERCEL_TOKEN"></a>三、github actions + VERCEL_TOKEN</h4><p>登录vercel面板，新建一个token，并存入到github仓库中的“仓库secret”处，取名为VERCEL_TOKEN；<br>新建work actions，在<code>.github/workflows/deploy.yml</code>中利用$自主地 部署项目到 vercel平台。</p><p>解释：部署到生产命令<code>vercel --prod</code>结束后会输出一段信息，进而通过<code>| grep -o</code>过滤出这段信息中的“预览链接”，而变量<code>DEPLOYMENT_URL</code>会通过<code>$()</code>接收这个链接字符串。之后保存到deployment_output.txt中。</p>   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">name: Deploy to Vercel</span><br><span class="line">on:</span><br><span class="line">  push:</span><br><span class="line">    branches:</span><br><span class="line">      - master  # 当推送到 master 分支时触发</span><br><span class="line">jobs:</span><br><span class="line">  deploy:</span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line">    environment: vercel-prod  # 设置环境为 vercel    </span><br><span class="line">    steps:</span><br><span class="line">      - name: Checkout repository</span><br><span class="line">        uses: actions/checkout@v2</span><br><span class="line"></span><br><span class="line">      - name: Install Vercel CLI</span><br><span class="line">        run: npm install -g vercel</span><br><span class="line"></span><br><span class="line">      - name: Deploy to Vercel</span><br><span class="line">        env:</span><br><span class="line">          VERCEL_TOKEN: $&#123;&#123; secrets.VERCEL_TOKEN &#125;&#125;</span><br><span class="line">        run: |</span><br><span class="line">          # 执行一次部署，并从部署成功的输出日志中，提取当前的 部署成功url</span><br><span class="line">          DEPLOYMENT_URL=$(vercel --prod --token $&#123;&#123; secrets.VERCEL_TOKEN &#125;&#125; --yes | grep -o &#x27;https://[a-zA-Z0-9./?=_-]*&#x27;)</span><br><span class="line">          # 或 从所有生产部署的输出日志中，查找到所有的 部署成功url，获取最新的url</span><br><span class="line">          # DEPLOYMENT_URL=$(vercel --token $&#123;&#123; secrets.VERCEL_TOKEN &#125;&#125; ls --prod | grep -o &#x27;https://[^ ]*&#x27; | head -n 1)</span><br><span class="line">          echo $DEPLOYMENT_URL &gt; deployment_output.txt</span><br><span class="line">        id: deploy</span><br><span class="line"></span><br><span class="line">      - name: Output Deployment URL</span><br><span class="line">        run: cat deployment_output.txt</span><br><span class="line">        if: success()</span><br><span class="line"></span><br></pre></td></tr></table></figure><h4 id="四、github-actions触发vercel-hook"><a href="#四、github-actions触发vercel-hook" class="headerlink" title="四、github actions触发vercel-hook"></a>四、github actions触发vercel-hook</h4><p>登录vercel面板，申请一个直接交给github actions的执行的，用于vercel部署的hook钩子；<br>将该hook钩子存入到github仓库中的“仓库secret”处，取名为VERCEL_DEPLOY_HOOK；只要githubAction中触发该hook即可强制部署：</p>   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- name: Trigger Vercel Deploy Hook</span><br><span class="line">        run: curl -X POST $&#123;&#123; secrets.VERCEL_DEPLOY_HOOK &#125;&#125;</span><br></pre></td></tr></table></figure>   <p>另外，可结合vercel中的<code>PROJECT_ID</code>和<code>VERCEL_TOKEN</code>,访问接口<code>https://api.vercel.com/v6/deployments?projectId=YOUR_PROJECT_ID</code>，获取最近的部署信息，进一步获取部署成功的 项目链接：</p>   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- name: Get Deployment URL</span><br><span class="line">        run: |</span><br><span class="line">          sleep 10  # 等待部署完成</span><br><span class="line">          DEPLOYMENT_URL=$(curl -s &quot;https://api.vercel.com/v6/deployments?projectId=YOUR_PROJECT_ID&quot; \</span><br><span class="line">            -H &quot;Authorization: Bearer $&#123;&#123; secrets.VERCEL_TOKEN &#125;&#125;&quot; \</span><br><span class="line">            | jq -r &#x27;.deployments[0].url&#x27;)</span><br><span class="line">          echo &quot;Deployment URL: $DEPLOYMENT_URL&quot;</span><br></pre></td></tr></table></figure><p>完整版：</p>   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">name: Deploy to Vercel</span><br><span class="line"></span><br><span class="line">on:</span><br><span class="line">  push:</span><br><span class="line">    branches:</span><br><span class="line">      - master  # 当推送到 master 分支时触发</span><br><span class="line"></span><br><span class="line">jobs:</span><br><span class="line">  deploy:</span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line">environment: vercel-prod</span><br><span class="line">    steps:</span><br><span class="line">      - name: Checkout repository</span><br><span class="line">        uses: actions/checkout@v2</span><br><span class="line"></span><br><span class="line">      - name: Trigger Vercel Deploy Hook</span><br><span class="line">        run: curl -X POST $&#123;&#123; secrets.VERCEL_DEPLOY_HOOK &#125;&#125;</span><br><span class="line"></span><br><span class="line">      - name: Get Deployment URL</span><br><span class="line">        run: |</span><br><span class="line">          sleep 10  # 等待部署完成</span><br><span class="line">          DEPLOYMENT_URL=$(curl -s &quot;https://api.vercel.com/v6/deployments?projectId=YOUR_PROJECT_ID&quot; \</span><br><span class="line">            -H &quot;Authorization: Bearer $&#123;&#123; secrets.VERCEL_TOKEN &#125;&#125;&quot; \</span><br><span class="line">            | jq -r &#x27;.deployments[0].url&#x27;)</span><br><span class="line">          echo &quot;Deployment URL: $DEPLOYMENT_URL&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>输出日志：</p> <h4 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h4><blockquote><p>除了第一种 <code>本地vercel-cli</code>，其他（vercel Deployment Hook，github action）方式，只要git远程仓库有新推送，便自动部署项目到 vercel平台；当在主支推送时，默认部署至vercel生产环境。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vercel </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>twikoo部署</title>
+      <link href="/posts/twikoo%E9%83%A8%E7%BD%B2.html"/>
+      <url>/posts/twikoo%E9%83%A8%E7%BD%B2.html</url>
+      
+        <content type="html"><![CDATA[<p>[TOC]</p><h2 id="部署方式（推荐1、2，大陆直连）"><a href="#部署方式（推荐1、2，大陆直连）" class="headerlink" title="部署方式（推荐1、2，大陆直连）"></a>部署方式（推荐1、2，大陆直连）</h2><h3 id="1-netlify"><a href="#1-netlify" class="headerlink" title="1.netlify:"></a>1.netlify:</h3><p><a href="https://yujun.netlify.app/.netlify/functions/twikoo">https://yujun.netlify.app/.netlify/functions/twikoo</a></p><iframe    src="https://yujun.netlify.app/.netlify/functions/twikoo"    frameborder="0"    height="150" width="100%"></iframe><h3 id="2-HuggingFace"><a href="#2-HuggingFace" class="headerlink" title="2.HuggingFace:"></a>2.HuggingFace:</h3><p><a href="https://mancai-twikoo.hf.space/">https://mancai-twikoo.hf.space</a></p><iframe    src="https://mancai-twikoo.hf.space"    frameborder="0"    height="150" width="100%"></iframe><h3 id="3-vercel"><a href="#3-vercel" class="headerlink" title="3. vercel:"></a>3. vercel:</h3><p><a href="https://twikoo.eamon.us.kg/">https://twikoo.eamon.us.kg</a></p><iframe    src="https://twikoo.eamon.us.kg"    frameborder="0"    height="150" width="100%"></iframe><p><a href="https://twikoo-alpha-blue.vercel.app/">https://twikoo-alpha-blue.vercel.app</a></p><iframe    src="https://twikoo-alpha-blue.vercel.app"    frameborder="0"    height="150" width="100%"></iframe><h3 id="4-worker"><a href="#4-worker" class="headerlink" title="4.worker:"></a>4.worker:</h3><p><a href="https://twikoowk.eamon.us.kg/">https://twikoowk.eamon.us.kg</a></p><iframe    src="https://twikoowk.eamon.us.kg"    frameborder="0"    height="150" width="100%"></iframe><p><a href="https://twikoo-cloudflare.z1260750674.workers.dev/">https://twikoo-cloudflare.z1260750674.workers.dev/</a></p><iframe    src="https://twikoo-cloudflare.z1260750674.workers.dev/"    frameborder="0"    height="150" width="100%"></iframe><h2 id="数据库comment表中-字段的-意义"><a href="#数据库comment表中-字段的-意义" class="headerlink" title="数据库comment表中 字段的 意义:"></a>数据库comment表中 字段的 意义:</h2><p>_id: 这是一个唯一标识该条评论的字符串ID,通常用作MongoDB数据库中的主键。它具有唯一性和重要性,是评论的主要标识。<br>uid: 这是一个唯一标识评论者的字符串ID。它可以用来关联评论与评论者的其他信息,比如头像、用户名等。<br>nick: 这是评论者的昵称,用于在评论中显示评论者的名称。<br>mail: 这是评论者的邮箱地址,可用于联系评论者或进行邮件通知。<br>mailMd5: 这是评论者邮箱地址的MD5哈希值,用于gravatar头像服务的集成。<br>link: 这是评论者的个人网站链接,可以在评论中展示。<br>ua: 这是评论者使用的用户代理字符串,可以用于分析评论者的设备和浏览器信息。<br>ip: 这是评论者的IP地址,可用于分析评论来源和检测异常情况。<br>master: 这个标志是否是博主的评论,0表示普通用户评论,1表示博主评论。<br>url: 这是评论所在页面的URL。<br>href: 这是评论所在页面的完整URL。<br>comment: 这是评论的内容文本。<br>pid: 这是父级评论的ID,用于实现评论的层级关系。<br>rid: 这是回复评论的ID,用于将回复与被回复的评论关联起来。<br>isSpam: 这个标志是否将该评论识别为垃圾评论,0表示正常评论,1表示垃圾评论。<br>created: 这是评论创建的Unix时间戳,用于评论的时间排序。<br>updated: 这是评论最后更新的Unix时间戳。<br>like: 这是对该评论的点赞信息,以JSON数组的形式存储。<br>top: 这个标志是否将该评论置顶,0表示普通评论,1表示置顶评论。<br>avatar: 这是评论者的头像URL,可用于在评论中显示头像。</p><p>总的来说,这些字段涵盖了评论的各个方面,包括评论者信息、评论内容、评论关系、评论状态等,为Twikoo提供了丰富的数据支持。其中,_id、uid和created等字段是比较重要的,可以作为数据的主键和索引。</p><h2 id="导入数据库中的数据，需注意："><a href="#导入数据库中的数据，需注意：" class="headerlink" title="导入数据库中的数据，需注意："></a>导入数据库中的数据，需注意：</h2><blockquote><p>1.url,href的路径是否还存在，数据中的 域名 要与实际域名一致，不然即便导入成功也无处渲染。<br>2.like字段，与“点赞者”创建 赞 时，保留的 赞id和个人信息 有依赖关系。<br>3.每个评论的”_id”是唯一的。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>js数据类型转换,及运算符</title>
+      <link href="/posts/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%EF%BC%8C%E5%8F%8A%E8%BF%90%E7%AE%97%E7%AC%A6.html"/>
+      <url>/posts/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%EF%BC%8C%E5%8F%8A%E8%BF%90%E7%AE%97%E7%AC%A6.html</url>
+      
+        <content type="html"><![CDATA[<p><strong>一、不同的数据类型会占用不同大小的内存空间，为数据指定相应的数据类型，可以更合理地使用内存。</strong></p><p><strong>二、js中的数据类型（7种原始类型&#x2F;基本类型，1种引用类型&#x2F;复杂类型）</strong><br>原始类型&#x2F;基本类型：Number,String,Boolean,Null,Undifined,BigInt,Symbol<br>引用类型&#x2F;复杂类型: Object</p><p>typeof 操作符【此为操作符，并非构造函数！typeof()中的()只是将后续的内容当做一个整体而已，非必须有】<br>作用：以 字符串形式 返回 变量中值的 数据类型。<br>“undefined”表示 变量 已使用var,let等关键字声明，但未赋值（初始化）;<br>“boolean”表示为 变量值的 数据类型为 布尔值;<br>“string”表示为字符串;<br>“number”表示为数值;<br>“object”表示为对象；（变量值为null时， typeof测出来的数据类型是object —特殊情况）<br>“function”表示为函数;<br>“symbol”表示为符号；</p> <span id="more"></span><p><code>1.Number</code><br>一般值：整数，小数（又称 浮点数，小数运算之前，必须先把小数转换为整数！）；<br>特殊值：NAN, Infinity, MAX_VALUE, MIN_VALUE</p><p>NaN (为not a number的简写)代表一个计算错误，它是一个错误的操作所得到的结果；console.log(10 * “abc”); &#x2F;&#x2F; NaN<br>NaN和任何数据进行运算，结果都是NaN。<br>Infinity, 无穷大 ；-Infinity, 负无穷大 【1&#x2F;0 在js中值为无穷大，java中会直接报错】</p><p>MAX_VALUE, MIN_VALUE（最大正数值，最小正数值）<br>用法：<br>var min &#x3D; Number.MIN_VALUE;<br>var max &#x3D; Number.MAX_VALUE;</p><p>isNaN()构造函数<br>用法及作用<br>isNaN(num)，判断num值为NaN则返回true</p><p><code>2.String</code><br>var str &#x3D; ‘qwer’;<br>str.length获取str的length<br>str[1]获取str的第2个字母</p><p>字符串的拼接【’+’遇到 字符串，直接解释为 字符串拼接】<br>转义字符（&#39;、&quot;引号的 转义，\n换行等）<br>es6中的 模板字符串。用法（反引号中直接写 包含 以${}包裹变量名的 字符串）：<code>qwer$&#123;变量名&#125;erter</code></p><p><code>3.Boolean(共2个值，非true即false)</code><br>关系运算符 返回的结果，就是布尔数据类型。console.log(2 &gt; 1);   &#x2F;&#x2F;true<br>‘!’的 取反 操作。<br><code>4.Undefined(只有1个值undefined)</code><br>变量 已使用var,let等关键字声明，但未赋值（初始化） 时，该变量的数据类型为Undefined。被动的，很少主动用！<br>   var uname;<br>   console.log(uname);  &#x2F;&#x2F;变量的值 默认为 undefined<br>   console.log(typeof uname);  &#x2F;&#x2F;变量中值的 数据类型 为undefined<br><code>5.Null(只有1个值Null）</code><br>用法（给一个已经声明的变量进行初始化，经常用！）：var user &#x3D; null;<br><code>6.Object</code><br>可以表示一组数据，是其他数据的一个集合。可看作一个容器，是js中众多容器 {}  []  set map…中的一种。</p><p><strong>三、js中的 数据类型转换</strong><br><code>1.其它数据类型 转为 String类型</code><br>强转：  toString()  String()<br>toString() 【只能把number 和 boolean 转换为字符串！undefined、Null都没有原型链，无法强转】<br>举例：  var a &#x3D; 100;<br>a不是一个对象，a.toString(),会瞬间把a包装成一个对象，这类对象叫包装对象，其中’. ‘为属性访问运算符。</p><p>String()构造函数，强大！【可以把number、boolean、undefined、null、字面量(固定取值) 转换为字符串！】</p><p>隐式转换：方便！（’+’遇到 字符串，直接解释为 拼接字符串，故 字符串前直接加’+’ 即可对其完成类型转换）<br>【运算符 左右两侧数据类型不一致时，运算符会悄悄的把一种数据类型转为另一种数据类型，保持数据类型一致。】</p><p><code>2.其它数据类型 转为 Number类型</code><br>Number() 构造函数，或者前面加上”+” 【把”123”、”   123   “转成123、空格字符串”     “或空串”” 转成0、”100px”转成NaN】<br>特殊：Number(false)和Number(Null) 都转为 0。Number(true) 转为 1。Number(undefined) 转为 NaN。</p><p>parseInt转为整数 parseFloat转为小数【能转则转！”100px”转成100，”px100”转成NaN】</p><p><code>3.其它数据类型 转为 Boolean类型</code><br>Boolean() 构造函数，强转<br> 【转为false: 0, null, NaN, undefined, 空串””。其他情况都转为true】</p><p><strong>四、运算符</strong><br>       &#x2F;&#x2F; 运算符：具有某些特定功能的符号  +  -  *  &#x2F;  %<br>        &#x2F;&#x2F; 操作数： 1 + 1 运算符号两侧的数据都是 操作数<br>        &#x2F;&#x2F; 要求：运算的时候，左右两侧的数据类型必须保持一致。如果不一致，会发生类型转换。</p><pre><code>    //  从功能上划分：【运算后，都会整体返回一个布尔值。】    //     算术运算符    //     递增递减运算符( ++ 在前，整体是一个新值 ，++在后整体是一个旧值)    //     关系运算符【算数、递增递减、和关系运算符中，会把两边的 操作数 隐式转换为Number类型】    //     逻辑运算符（&amp;&amp;一假全假、||一真全真、!。注意：&amp;&amp;碰到第一个为false，便会立即中断后续的语句。|| 碰到第一个为true，也会立即中断后续的语句。）    //     赋值运算符    // 从操作数上划分    //    一元运算符  单目运算符    //    二元运算符  双目运算符    //    三元运算符  三目运算符  三元表达式 （表达式 ? 结果A : 结果B）</code></pre><p>【拓展】<br>1.!&#x3D;隐式类型转换 不判断数据类型。!&#x3D;&#x3D;判断数据类型（&#x3D;&#x3D;与&#x3D;&#x3D;&#x3D;同理）</p><p>2.后端传递数据过来进行判断时，为数组时判断数组的长度，为对象时用if(Object.keys(obj).length){}，判断对象属性数组长度。<br>如果可能传过来null，也有可能传过来数组，并且不希望空数组执行语句，则可以if(res &amp;&amp; res.length){}，res和res.length位置不能换，如果为null，则直接返回null，后面的res.length不执行，从而不报错，如果为[]，则res.length为0，返回0，也将空数组去除了。</p><p>3.在js中根本不存在真正的空对象，理解这一点至关重要！即使时最简单的{}对象也会包含从Object.prototype继承而来的属性和方法。我们提到的”空对象”只是说这个对象没有自有属性，不考虑它是否有继承而来的属性。<br>{}、null、[]的区别【注：在转化为 布尔值时，只有null转为false！[]、{}都会被转为true。】<br>{}是一个不完全空的对象，原型链上有Object；null为原型链顶端，因此Object.prototype.<strong>proto</strong>&#x3D;&#x3D;&#x3D;null为true。<br>null是完全空对象，原型链也没有。<br>[]原型链上还比{}多一个Array。</p><p>4.使用 三元运算符能做到的，if else语句也能做到。只是三元运算符不仅能用于js，也能与html标签结合使用：</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 其它 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+            <tag> 运算符 </tag>
+            
+            <tag> 数据类型 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>使用surge发布前端项目</title>
+      <link href="/posts/%E4%BD%BF%E7%94%A8surge%E5%8F%91%E5%B8%83%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE.html"/>
+      <url>/posts/%E4%BD%BF%E7%94%A8surge%E5%8F%91%E5%B8%83%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE.html</url>
+      
+        <content type="html"><![CDATA[<p>Surge是面向前端开发人员的静态web发布网站。</p><h4 id="1-安装node"><a href="#1-安装node" class="headerlink" title="1. 安装node"></a>1. 安装node</h4><h4 id="2-安装surge"><a href="#2-安装surge" class="headerlink" title="2. 安装surge"></a>2. 安装surge</h4><p>npm install –global surge</p><span id="more"></span><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">操作命令：</span><br><span class="line">$ surge --help</span><br><span class="line">  surge – single command web publishing. (v0.23.1)</span><br><span class="line">  Usage:</span><br><span class="line">    surge &lt;project&gt; &lt;domain&gt;</span><br><span class="line">  Options:</span><br><span class="line">    -a, --add           adds user to list of collaborators (email address)</span><br><span class="line">    -r, --remove        removes user from list of collaborators (email address)</span><br><span class="line">    -V, --version       show the version number</span><br><span class="line">    -h, --help          show this help message</span><br><span class="line">  Additional commands:</span><br><span class="line">    surge whoami        show who you are logged in as</span><br><span class="line">    surge logout        expire local token</span><br><span class="line">    surge login         only performs authentication step</span><br><span class="line">    surge list          list all domains you have access to</span><br><span class="line">    surge teardown      tear down a published project</span><br><span class="line">    surge plan          set account plan  Guides:</span><br><span class="line">    Getting started     surge.sh/help/getting-started-with-surge</span><br><span class="line">    Custom domains      surge.sh/help/adding-a-custom-domain</span><br><span class="line">    Additional help     surge.sh/help</span><br><span class="line">  When in doubt, run surge from within your project directory.</span><br></pre></td></tr></table></figure><h4 id="3-进入待发布的目录"><a href="#3-进入待发布的目录" class="headerlink" title="3.进入待发布的目录"></a>3.进入待发布的目录</h4><p>cd <to-public-dir></p><h4 id="4-发布"><a href="#4-发布" class="headerlink" title="4.发布"></a>4.发布</h4><p>【可直接命令（<code>surge + project相对路径 + 自定义域名</code>）进行project的发布，不过域名可能会冲突！！！】</p><p>$ surge<br>   Welcome to surge! (surge.sh)<br>   Login (or create surge account) by entering email &amp; password.<br>          email: <a href="mailto:&#109;&#x65;&#64;&#x78;&#105;&#101;&#120;&#105;&#97;&#110;&#x62;&#x69;&#x6e;&#46;&#99;&#x6e;">&#109;&#x65;&#64;&#x78;&#105;&#101;&#120;&#105;&#97;&#110;&#x62;&#x69;&#x6e;&#46;&#99;&#x6e;</a><br>       password: Surge2022<br>   Running as <a href="mailto:&#x6d;&#101;&#64;&#120;&#x69;&#101;&#x78;&#x69;&#x61;&#x6e;&#98;&#105;&#x6e;&#x2e;&#99;&#110;">&#x6d;&#101;&#64;&#120;&#x69;&#101;&#x78;&#x69;&#x61;&#x6e;&#98;&#105;&#x6e;&#x2e;&#99;&#110;</a> (Student)<br>        project: D:\code\public<br>domain: fallacious-action.surge.sh 此域名可 自定义为 *****.surge.sh，域名太短可能会发生冲突，配置失效！！<br>     encryption: *.surge.sh, surge.sh (185 days)<br>             IP: 138.197.235.123<br>   Success! - Published to fallacious-action.surge.sh</p><p><code>发布成功后，访问指定ip或域名即可在线看到 此project。</code><br><code>撤销已发布项目 使用命令 surge teardown+域名。</code><br><code>亲测速度还可以，很方便。可以自定义 多个域名，但共享同一个ip</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> surge </tag>
+            
+            <tag> 静态资源发布 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Never letting Go</title>
+      <link href="/posts/Never-letting-Go.html"/>
+      <url>/posts/Never-letting-Go.html</url>
+      
+        <content type="html"><![CDATA[<img src="/posts/Never-letting-Go/22.png" class="" title="请君为我倾耳听"> <span id="more"></span><p style="text-align:center;">行路难，行路难，<br/>多歧路，今安在？<br/>长风破浪会有，直挂云帆济沧海。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 音乐 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>流浪地球</title>
+      <link href="/posts/%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83.html"/>
+      <url>/posts/%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83.html</url>
+      
+        <content type="html"><![CDATA[<p>待更新</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 电影 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 国片新星 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>cloudflare区域DNS批量删除</title>
+      <link href="/posts/cloudflare%E5%8C%BA%E5%9F%9FDNS%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4.html"/>
+      <url>/posts/cloudflare%E5%8C%BA%E5%9F%9FDNS%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4.html</url>
+      
+        <content type="html"><![CDATA[<h5 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h5><blockquote><p><strong>1.默认 每次删除100条dns记录</strong><br><strong>2.只有 Authorization；或X-Auth-Email和X-Auth-Key同时</strong><br><strong>3.注意分配给apiToken的 细粒度权限</strong></p></blockquote><hr><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const axios = require(&#x27;axios&#x27;);</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 替换为你的Cloudflare API Token和Zone ID</span><br><span class="line">const apiToken = &#x27;xxxxxxxxxxxxxxxxx&#x27;;</span><br><span class="line">const zoneId = &#x27;xxxxxxxxxxxxxxxxxxx&#x27;;</span><br><span class="line"></span><br><span class="line">// 设置请求头</span><br><span class="line">const headers = &#123;</span><br><span class="line">  &#x27;Authorization&#x27;: `Bearer $&#123;apiToken&#125;`,</span><br><span class="line">// &#x27;X-Auth-Email&#x27;:&#x27;xxxxxxxx@gmail.com&#x27;,</span><br><span class="line">// &#x27;X-Auth-Key&#x27;:&#x27;xxxxxxxxxxxxxxxxxxx&#x27;,</span><br><span class="line">  &#x27;Content-Type&#x27;: &#x27;application/json&#x27;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><span id="more"></span><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// 获取DNS记录的URL</span><br><span class="line">const url = `https://api.cloudflare.com/client/v4/zones/$&#123;zoneId&#125;/dns_records`;</span><br><span class="line"></span><br><span class="line">// 获取DNS记录并删除</span><br><span class="line">axios.get(url, &#123; headers &#125;)</span><br><span class="line">  .then(response =&gt; &#123;</span><br><span class="line">    const dnsRecords = response.data.result;</span><br><span class="line">      const deletePromises = dnsRecords.map(record =&gt; &#123;</span><br><span class="line">      console.log(`Attempting to delete record: $&#123;record.name&#125;`);</span><br><span class="line">      return axios.delete(`$&#123;url&#125;/$&#123;record.id&#125;`, &#123; headers &#125;)</span><br><span class="line">        .then(() =&gt; &#123;</span><br><span class="line">          console.log(`Deleted record: $&#123;record.name&#125;`);</span><br><span class="line">        &#125;)</span><br><span class="line">        .catch(error =&gt; &#123;</span><br><span class="line">          console.error(`Failed to delete record: $&#123;record.name&#125;`, error.response ? error.response.data : error.message);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;); </span><br><span class="line">return Promise.all(deletePromises);</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(() =&gt; &#123;</span><br><span class="line">    console.log(&#x27;Batch deletion completed.&#x27;);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(error =&gt; &#123;</span><br><span class="line">    console.error(&#x27;Failed to fetch DNS records:&#x27;, error.response ? error.response.data : error.message);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> node.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>wamp server2.5版本 配置多站点</title>
+      <link href="/posts/wamp%20server2.5%E7%89%88%E6%9C%AC%20%E9%85%8D%E7%BD%AE%E5%A4%9A%E7%AB%99%E7%82%B9.html"/>
+      <url>/posts/wamp%20server2.5%E7%89%88%E6%9C%AC%20%E9%85%8D%E7%BD%AE%E5%A4%9A%E7%AB%99%E7%82%B9.html</url>
+      
+        <content type="html"><![CDATA[<p>先找到 需要修改的以下3个文件：</p><p>httpd.conf：D:\wamp\bin\apache\apache2.4.9\conf</p><p>httpd-vhosts：D:\wamp\bin\apache\apache2.4.9\conf\extra</p><p>hosts：C:\WINDOWS\System32\drivers\etc</p><p> </p><span id="more"></span><p> </p><p>1.修改 httpd.conf：(在文档中分别找到以下三句，把句首的注释符 ‘#’删掉)</p><p>LoadModule php5_module “d:&#x2F;wamp&#x2F;bin&#x2F;php&#x2F;php5.5.12&#x2F;php5apache2_4.dll”</p><p>PHPIniDir d:&#x2F;wamp&#x2F;bin&#x2F;php&#x2F;php5.5.12</p><p>Include conf&#x2F;extra&#x2F;httpd-vhosts.conf</p><p> </p><p> </p><p>2.修改 httpd-vhosts：</p><p>复制粘贴两个 以下模板</p><p>&lt;VirtualHost *:80&gt;<br>    ServerAdmin <a href="mailto:&#x77;&#101;&#x62;&#109;&#x61;&#115;&#x74;&#x65;&#114;&#64;&#x64;&#x75;&#x6d;&#109;&#121;&#x2d;&#x68;&#x6f;&#115;&#x74;&#50;&#46;&#x65;&#120;&#97;&#x6d;&#x70;&#x6c;&#x65;&#46;&#99;&#111;&#x6d;">&#x77;&#101;&#x62;&#109;&#x61;&#115;&#x74;&#x65;&#114;&#64;&#x64;&#x75;&#x6d;&#109;&#121;&#x2d;&#x68;&#x6f;&#115;&#x74;&#50;&#46;&#x65;&#120;&#97;&#x6d;&#x70;&#x6c;&#x65;&#46;&#99;&#111;&#x6d;</a><br>    DocumentRoot “c:&#x2F;Apache24&#x2F;docs&#x2F;dummy-host2.example.com”<br>    ServerName dummy-host2.example.com<br>    ErrorLog “logs&#x2F;dummy-host2.example.com-error.log”<br>    CustomLog “logs&#x2F;dummy-host2.example.com-access.log” common<br></VirtualHost></p><p>并修改其为：</p><p>&lt;VirtualHost *:80&gt;<br>    DocumentRoot  “D:&#x2F;wamp&#x2F;www&#x2F;demo&#x2F;site1”   &#x2F;&#x2F; 新站点，即site.com的根目录<br>    ServerName  localhost1.com      &#x2F;&#x2F; 新站点的域名<br>       &lt;Directory “e:&#x2F;PhpProject&#x2F;“&gt;<br>            Options Indexes FollowSymLinks<br>            AllowOverride all<br>            Require all granted<br>      </Directory><br></VirtualHost></p><p>&lt;VirtualHost *:80&gt;<br>    DocumentRoot  “D:&#x2F;wamp&#x2F;www&#x2F;demo&#x2F;site2”   <br>    ServerName  localhost2.com <br>       &lt;Directory “e:&#x2F;PhpProject&#x2F;“&gt;<br>            Options Indexes FollowSymLinks<br>            AllowOverride all<br>            Require all granted<br>      </Directory><br></VirtualHost></p><p> </p><p>。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。</p><p>为使 最初安装成功时 的localhost界面  继续生效(新建站点后，原来默认的localhost域名就会失效)：</p><p>在此还需要重新添加一个站点，</p><p>&lt;VirtualHost *:80&gt;<br>    DocumentRoot   “D:&#x2F;wamp&#x2F;www&#x2F;“    &#x2F;&#x2F; 此为wamp server 默认项目根目录<br>    ServerName   localhost<br></VirtualHost></p><p> </p><p> </p><p>还有一点！！！在我建好站 之后，再把所有的这些东西删掉 重启wamp server，3个站点都照样能正常工作。你们建站前先把它删掉试试！</p><p>   &lt;Directory “e:&#x2F;PhpProject&#x2F;“&gt;<br>            Options Indexes FollowSymLinks<br>            AllowOverride all<br>            Require all granted<br>      </Directory></p><p> <br>3.修改 hosts(为新域名指定 127.0.0.1)：</p><p>这是win64位2.5版本wampserver的百度云链接：</p><p> <a href="https://pan.baidu.com/s/1llyy7yyJnrLvuGyskVVSsQ">https://pan.baidu.com/s/1llyy7yyJnrLvuGyskVVSsQ</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> php </tag>
+            
+            <tag> wamp server </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java class中的构造方法</title>
+      <link href="/posts/java%20class%E4%B8%AD%E7%9A%84%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95.html"/>
+      <url>/posts/java%20class%E4%B8%AD%E7%9A%84%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95.html</url>
+      
+        <content type="html"><![CDATA[<p>构造方法:初始化对象成员 时调用的方法。</p><p>1.方法名 和 类名完全相同</p><p>2.在方法名的前面没有返回值类型的声明</p><p>3.在方法中不能使用return语句返回一个值</p><p>4.当没有指定构造方法时，系统会自动添加无参的构造方法</p><p>5.当有指定构造方法时，无论该构造方法是有参，还是无参，系统都不会再自动添加无参的构造方法</p><p>6.构造方法的重载：方法名相同，但参数不同的多个方法，调用时会自动根据不同的参数选择相应的方法</p><p>7.构造函数 不能被继承(子类默认先自动调用父类的 无参构造方法)</p><span id="more"></span><p> </p><p>无参的构造方法</p><p>public class HelloWorld {<br>    public static void main(String[] args) {<br>        Cat cat &#x3D; new Cat();<br>    }<br>}<br>class Animal {<br>    public Animal() {<br>        System.out.println(“动物”);<br>    }<br>}<br>class Cat extends Animal {<br>    public Cat() {<br>        super();  &#x2F;&#x2F;有无均可，默认先调用父类构造方法<br>        System.out.println(“猫”);<br>    }<br>}</p><p>&#x2F;&#x2F;输出：动物 猫</p><p> </p><p>有参的构造方法</p><p>public class HelloWorld {<br>    public static void main(String[] args) {<br>        Cat cat &#x3D; new Cat();<br>    }<br>}<br>class Animal {<br>    public Animal(String name) {<br>        System.out.println(“动物name：”+name);<br>    }<br>}<br>class Cat extends Animal {<br>    public Cat() {<br>        super(“喵星人”);<br>        System.out.println(“猫”);<br>    }<br>}</p><p>&#x2F;&#x2F;输出：动物name:喵星人    猫</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> 构造方法 </tag>
+            
+            <tag> new实例化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>js获取当前点击元素的索引</title>
+      <link href="/posts/js%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%82%B9%E5%87%BB%E5%85%83%E7%B4%A0%E7%9A%84%E7%B4%A2%E5%BC%95.html"/>
+      <url>/posts/js%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%82%B9%E5%87%BB%E5%85%83%E7%B4%A0%E7%9A%84%E7%B4%A2%E5%BC%95.html</url>
+      
+        <content type="html"><![CDATA[<p>以ul下的li元素为例；获取li的索引，代码如下：</p><p>    &lt;ul id="list"&gt;<br>         &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;1&lt;/li&gt;<br>        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;2&lt;/li&gt;<br>         &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;3&lt;/li&gt;<br>        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;4&lt;/li&gt;<br>    &lt;/ul&gt;</p><span id="more"></span><p>方法1：(自执行匿名函数法)</p><p>var ul &#x3D; document.getElementById(“list”);<br>var list &#x3D; ul.getElementsByTagName(‘li’);<br>for(var i&#x3D;0;i&lt;list.length;i++) {<br>  !function(j) {&#x2F;&#x2F; 匿名函数表达式1(j为该匿名函数形参)<br>     &#x2F;&#x2F; console.log(j); &#x2F;&#x2F;0,1,2,3<br>    list[j].onclick &#x3D; function() {&#x2F;&#x2F; 该匿名函数中 无参数！<br>       console.log(j); &#x2F;&#x2F; 点哪个输出哪个<br>      };<br>    }(i);&#x2F;&#x2F; 传入实参i,调用匿名函数<br>  }</p><p>方法2：(函数调用法)</p><p>function acti(ind) {<br>  list[ind].onclick &#x3D; function() {&#x2F;&#x2F; 该匿名函数中 无参数！<br>     console.log(ind); &#x2F;&#x2F; 点哪个输出哪个<br>  };<br>}<br>for(var i&#x3D;0;i&lt;list.length;i++) {<br>  acti(i);<br>}</p><p>方法3:(添加自定义属性index法)</p><p>把每个li元素加上自定义属性index,在li被点击时获取相应index属性即可</p><p>var ul &#x3D; document.getElementById(“list”);<br>var list &#x3D; ul.querySelectorAll(‘li’);<br>for (var i &#x3D; 0; i&lt;list.length; i++) {<br>   list[i].index &#x3D; i;&#x2F;&#x2F; 为每个li添加自定义属性并相应赋值<br>}<br>ul.addEventListener(‘click’,function(e){&#x2F;&#x2F; 为整个ul添加click<br>   console.log(e.target.index);&#x2F;&#x2F; 输出click target(即被点击的li) 对应的index值<br>})</p><p>方法4：(数组indexOf元素索引定位法)</p><p>获取ul下的所有li，找到被点击li在所有li中的位置</p><p>ul.addEventListener(‘click’,function(e){<br>   var item &#x3D; e.target;<br>   var listArr &#x3D; Array.from(list);<br>   console.log(listArr.indexOf(item));<br>})</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>js,jq获取 滚动条高度 及 浏览器宽高</title>
+      <link href="/posts/js,jq%E8%8E%B7%E5%8F%96%20%E6%BB%9A%E5%8A%A8%E6%9D%A1%E9%AB%98%E5%BA%A6%20%E5%8F%8A%20%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%BD%E9%AB%98.html"/>
+      <url>/posts/js,jq%E8%8E%B7%E5%8F%96%20%E6%BB%9A%E5%8A%A8%E6%9D%A1%E9%AB%98%E5%BA%A6%20%E5%8F%8A%20%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%BD%E9%AB%98.html</url>
+      
+        <content type="html"><![CDATA[<p>&#x2F;&#x2F; 获取 滚动条高度<br>console.log(window.scrollY);  <br>console.log(window.pageYOffset);<br>console.log(document.documentElement.scrollTop);  &#x2F;&#x2F; chrome下document.body.scrollTop值恒为0<br>console.log($(window).scrollTop());<br>console.log($(“html,body”).scrollTop());<br>console.log($(document).scrollTop());</p><span id="more"></span><p>&#x2F;&#x2F; 浏览器窗口可视区 宽度(不包含滚动条)<br>console.log(document.body.clientWidth);    &#x2F;&#x2F; document.documentElement<br>console.log($(document.body).width());    &#x2F;&#x2F;$(document.documentElement), $(“html,body”) 和 $(window)都可<br>console.log(window.innerWidth);  &#x2F;&#x2F; 包含滚动条!</p><p>&#x2F;&#x2F; 值会随窗口变窄而减小(数值未发现规律),但最终不会小于 最初设置的document宽<br>console.log($(document).width());</p><p> </p><p>&#x2F;&#x2F;浏览器可视区 高度(不包含滚动条)<br>console.log(document.documentElement.clientHeight);<br>console.log($(window).height());<br>console.log(window.innerHeight);</p><p>&#x2F;&#x2F; 最初document 的高度(即使js改变了文档宽高也无效)<br>console.log(document.body.clientHeight);<br>console.log($(document.body).height());    &#x2F;&#x2F; $(document.documentElement)和 $(“html,body”) </p><p> </p><p> </p><p>console.log(window.outerWidth);  &#x2F;&#x2F; Chrome测试发现比inner多14px,不知为何<br>alert(window.outerHeight);  &#x2F;&#x2F; 似乎不是浏览器高!</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> js，jq，滚动条高度 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数组去重的 5种方法</title>
+      <link href="/posts/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E7%9A%84-5%E7%A7%8D%E6%96%B9%E6%B3%95.html"/>
+      <url>/posts/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E7%9A%84-5%E7%A7%8D%E6%96%B9%E6%B3%95.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>​        var arr &#x3D; [1, 2, 2, 3, 4, 4, 5, 6, 7, 7, 4, 3, 5, 7, 11, 12, 11];</p><p>​        var newArr &#x3D; [];</p></blockquote><p>​        &#x2F;&#x2F;<strong>方法1最优 set对象</strong>【Set是没有重复值的数据集合，传入一个需要去重的数组，Set会自动删除重复的项】</p><p>​        &#x2F;&#x2F; newArr &#x3D; Array.from(new Set(arr));</p><p>​        &#x2F;&#x2F; console.log(newArr)</p><p>​        <strong>&#x2F;&#x2F;方法2时间短，占空间。newArr.indexOf</strong>【遍历原数组的各项，每次判断新数组中是否存在该项，不存在就把当前项添加到新数组中。此法效率高，但占空间】</p><p>​        &#x2F;*arr.forEach(function (item, index) { </p><p>​            if (newArr.indexOf(item) &#x3D;&#x3D;&#x3D; -1) {</p><p>​                newArr.push(item)</p><p>​            }</p><p>​        });*&#x2F;</p><p>​        &#x2F;* arr.forEach((item, index) &#x3D;&gt; {&#x2F;&#x2F; 方法2 箭头函数写法</p><p>​            if (newArr.indexOf(item) &#x3D;&#x3D;&#x3D; -1) {</p><p>​                newArr.push(item)</p><p>​            }</p><p>​        }); *&#x2F;</p><p>​        const m &#x3D; new Map();</p><p>​        &#x2F;&#x2F;【下面的方法用时依次增多！！】</p><p>​        &#x2F;&#x2F; <strong>方法3.1  map()</strong> 【初始化一个可由 键值对 组成的集合m，形如二维数组。利用Map中 key的唯一性 同名覆盖。再遍历Map集合中的唯一key，并依次放入新数组newArr】</p><p>​        &#x2F;*for (let i &#x3D; 0; i &lt; arr.length; i++) {</p><p>​              &#x2F;&#x2F;m.set(key, value);第一个值为key，注意与forEach((value, key, array)&#x3D;&gt;{ })参数顺序做区分。</p><p>​              m.set(arr[i], true);&#x2F;&#x2F;依次把arr中每一项，设定为m中的唯一key</p><p>​          }</p><p>​          m.forEach(function (item, index) {</p><p>​              newArr.push(index)&#x2F;&#x2F;注意：m集合中的key，此时是forEach中的index！之后把 唯一值 放入 新数组</p><p>​          }); *&#x2F;</p><p>​        &#x2F;&#x2F; <em><strong>方法3.2，map() 是3.1的进阶，也是利用Map中 key的唯一性</strong></em></p><p>​        &#x2F;*for (let i &#x3D; 0; i &lt; arr.length; i++) {</p><p>​            &#x2F;&#x2F; 若m集合中不存在以当前arr项命名的key，就把当前项设置为m集合中的新key，同时把当前项放入新数组。</p><p>​            if (!m.has(arr[i])) {</p><p>​                m.set(arr[i])</p><p>​                newArr.push(arr[i])</p><p>​            }</p><p>​        }; *&#x2F;</p><p>​        &#x2F;&#x2F;<strong>方法4 filter+arr.indexOf</strong>【遍历arr原数组中的每一项item和index，分别获取的每个item在arr中首项（唯一）的索引组成的集合 是arr原数组所有索引构成集合的一个 子集。返回在两种index一致时，即该索引子集 对应项 所组成的数组，拷贝给newArr】</p><p>​        &#x2F;* newArr &#x3D; arr.filter(function (item, index) {</p><p>​            return arr.indexOf(item) &#x3D;&#x3D; index;</p><p>​        });*&#x2F;</p><p>​        &#x2F;&#x2F;<strong>方法5 reduce</strong>【以作为initialValue的[]开始聚合，每次循环聚合返回的结果集_newArr也是数组。遍历原数组arr，拿arr的item依次进行判断：若 最新的 结果集 中，不存在arr的当前item，即把该项添加到结果集数组中。返回新结果集，继续下一个item判断】</p><p>​        &#x2F;* newArr &#x3D; arr.reduce((_newArr, item) &#x3D;&gt; {</p><p>​            !_newArr.includes(item) &amp;&amp; _newArr.push(item);</p><p>​            &#x2F;&#x2F; if (!_newArr.includes(item)) {</p><p>​            &#x2F;&#x2F;     _newArr.push(item);</p><p>​            &#x2F;&#x2F; }</p><p>​            return _newArr;</p><p>​        }, []);*&#x2F;</p><p>​     &#x2F;&#x2F; console.log(newArr);</p><hr><p>​    </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">//需求3， 得到各数字每次出现的次数</span></span><br><span class="line"></span><br><span class="line">​        <span class="comment">/*         console.log(&quot;各出现次数结果&quot;, arr.reduce((pre, cur) =&gt; &#123;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">​                    //pre结果集（对象）中有以 当前项cur 作为key命名的。便把该key对应的value值pre[cur] 赋值给val。没有则初始化为0.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">​                    let val = pre[cur] || 0;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">​                    pre[cur] = ++val;//存在以 当前项cur 作为key命名的。便把该key对应的value值pre[cur]，+1</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">​                    return pre;//每次循环， pre对象 结果集 可能不变/增加键值对/原有键值对的value,即pre[cur]+1</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">​                &#125;, &#123;&#125;)) */</span></span><br></pre></td></tr></table></figure><p>[^拓展 练习]: </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数组去重，js，数组 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
