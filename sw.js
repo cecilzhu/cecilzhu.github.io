@@ -49,7 +49,7 @@
     self.addEventListener('activate', event => event.waitUntil(clients.claim()))
 
     // noinspection JSFileReferences
-    let skipRequest = request => request.url.startsWith('https://i0.hdslb.com')
+    let skipRequest = request => request.url.startsWith('https://i0.hdslb.com') || request.url.startsWith('https://music.163.com')
 let cacheRules = {
 simple: {
 clean: true,
