@@ -3316,10 +3316,7 @@ figure.highlight pre .javascript .function {
 #article-container pre[class*='language-'].line-numbers > code {
   position: relative;
   line-height: 1.6;
-  white-space: inherit;
-  word-wrap: normal;
-  word-break: normal;
-  overflow-wrap: normal;
+  white-space: pre-wrap;
 }
 #article-container pre[class*='language-'].line-numbers .line-numbers-rows {
   position: absolute;
@@ -15179,6 +15176,15 @@ blockquote {
 }
 .post-tools .post-tools-left {
   width: auto;
+}
+#post .tag_share {
+  margin-bottom: 2rem;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 .relatedPosts {
   margin-top: 1.25rem;
