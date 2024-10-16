@@ -49,8 +49,7 @@
     self.addEventListener('activate', event => event.waitUntil(clients.claim()))
 
     // noinspection JSFileReferences
-    let skipRequest = request => request.url.startsWith("https://i0.hdslb.com") || request.url.startsWith('https://api.i-meto.com')
-let cacheRules = {
+    let cacheRules = {
 simple: {
 clean: true,
 search: false,
@@ -167,7 +166,7 @@ const fetchFile = (request, banCache, urls = null) => {
         // [blockRequest call]
         if (request.method !== 'GET' || !request.url.startsWith('http')) return
         // [modifyRequest call]
-        if (skipRequest(request)) return;
+        // [skipRequest call]
         let cacheKey = url.hostname + url.pathname + url.search
         let cache
         if (isMemoryQueue(request)) {
