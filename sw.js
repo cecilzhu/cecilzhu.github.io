@@ -49,7 +49,8 @@
     self.addEventListener('activate', event => event.waitUntil(clients.claim()))
 
     // noinspection JSFileReferences
-    let cacheRules = {
+    let skipRequest = request => request.url.startsWith("https://i0.hdslb.com") || request.url.startsWith('https://meting.qjqq.cn')
+let cacheRules = {
 simple: {
 clean: true,
 search: false,
@@ -166,7 +167,7 @@ const fetchFile = (request, banCache, urls = null) => {
         // [blockRequest call]
         if (request.method !== 'GET' || !request.url.startsWith('http')) return
         // [modifyRequest call]
-        // [skipRequest call]
+        if (skipRequest(request)) return;
         let cacheKey = url.hostname + url.pathname + url.search
         let cache
         if (isMemoryQueue(request)) {
