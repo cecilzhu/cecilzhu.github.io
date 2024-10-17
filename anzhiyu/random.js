@@ -1,3 +1,0 @@
-var posts=["posts/liu_lang_di_qiu.html","posts/twikoo_bu_shu.html","/posts/telegram_test.html","posts/vercel_bu_shu_fang_shi_tan_tao.html","posts/shu_zu_qu_chong_de_5_chong_fang_fa.html","posts/js_shu_ju_lei_xing_zhuan_huan_ji_yun_suan_fu.html","posts/js_huo_qu_dang_qian_dian_ji_yuan_su_de_suo_yin.html","posts/shi_yong_surge_fa_bu_qian_duan_xiang_mu.html","posts/never_letting_go.html","posts/java_class_zhong_de_gou_zao_fang_fa.html","posts/cloudflare_qu_yu_dns_pi_liang_shan_chu.html","posts/js_jq_huo_qu_gun_dong_tiao_gao_du_ji_liu_lan_qi_kuan_gao.html","posts/shell_ji_github_workflow_chu_tan.html","posts/wamp_server2.5_ban_ben_pei_zhi_duo_zhan_dian.html"];function toRandomPost(){
-    pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);
-  };
