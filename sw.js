@@ -24,7 +24,7 @@
 
     self.addEventListener('install', () => {
         self.skipWaiting()
-        const escape = 0
+        const escape = 1
         if (escape) {
             readVersion().then(async oldVersion => {
                 // noinspection JSIncompatibleTypesComparison
@@ -319,7 +319,7 @@ const fetchFile = (request, banCache, urls = null) => {
             // 新用户和刚进行过逃逸操作的用户不进行更新操作
             if (!oldVersion) {
                 // noinspection JSValidateTypes
-                newVersion.escape = 0
+                newVersion.escape = 1
                 writeVersion(newVersion)
                 return {new: newVersion, old: oldVersion}
             }
