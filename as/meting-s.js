@@ -121,6 +121,9 @@ class MetingJSElement extends HTMLElement {
       ...defaultOption,
       ...this.config,
     }
+
+options.order == "list" && options.order = "random"
+
     for (let optkey in options) {
       if (options[optkey] === 'true' || options[optkey] === 'false') {
         options[optkey] = (options[optkey] === 'true')
