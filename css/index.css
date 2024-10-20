@@ -3316,10 +3316,7 @@ figure.highlight pre .javascript .function {
 #article-container pre[class*='language-'].line-numbers > code {
   position: relative;
   line-height: 1.6;
-  white-space: inherit;
-  word-wrap: normal;
-  word-break: normal;
-  overflow-wrap: normal;
+  white-space: pre-wrap;
 }
 #article-container pre[class*='language-'].line-numbers .line-numbers-rows {
   position: absolute;
@@ -9364,11 +9361,6 @@ h1.page-title + .tag-cloud-list {
   overflow: hidden;
   margin-top: 20px;
   padding: 20px 24px;
-}
-@media screen and (max-width: 768px) {
-  #aside-content .card-widget:not(#card-toc) {
-    display: none;
-  }
 }
 #aside-content .card-widget .author-info__bottom-group {
   display: -webkit-box;
