@@ -1,0 +1,31 @@
+- title: 即刻短文
+  subTitle: 咸鱼的日常生活。
+  tips: 随时随地，分享生活
+  buttonText: 关于我
+  buttonLink: /about/
+  limit: 30
+  home_essay: true
+  top_background: /img/12.webp
+  essay_list:
+    - content: 歌曲推荐🤞：青玉案元夕·陈彼得
+      date: 2024/09/25
+      aplayer:
+        server: netease
+        id: 2111831690
+    - content: 安知鱼主题指南
+      date: 2023/09/09
+      video:
+        - https://player.bilibili.com/player.html?aid=226886152&bvid=BV1Ch41137tR&cid=1081639816&p=1&autoplay=0
+      from: 安知鱼
+      link: https://blog.anheyu.com/
+    - content: 逛一逛🌈故宫博物院
+      date: 2022/10/23
+      image:
+        - /images/乾清宫.webp
+        - /images/社稷江山金殿.webp
+      address: 北京·故宫
+    - content: 歌曲推荐🤞：晚风·伍佰
+      date: 2021/09/25
+      aplayer:
+        server: netease
+        id: 4876206

@@ -1,0 +1,534 @@
+卷 asa 的文件夹 PATH 列表
+卷序列号为 76C4-92F8
+E:.
+│  404.html
+│  ads.txt
+│  baidu_verify_codeva-SUbWzTSl9Z.html
+│  BingSiteAuth.xml
+│  cacheList.json
+│  f8aaa9c278699ac36ad62dbd2607c5a6.txt
+│  google3255bc8acaaacc24.html
+│  index.html
+│  manifest.json
+│  meting2_custom.js
+│  README.md
+│  robots.txt
+│  search.xml
+│  sitemap.txt
+│  sitemap.txt.gz
+│  sitemap.xml
+│  sitemap.xml.gz
+│  sitemap.xsl
+│  sitemap_index.xml
+│  sitemap_index.xml.gz
+│  submit_urls.txt
+│  sw-dom.js
+│  sw.js
+│  tree.txt
+│  update.json
+│  _headers
+│  
+├─about
+│      index.html
+│      
+├─anzhiyu
+│      random.js
+│      
+├─archives
+│  │  index.html
+│  │  
+│  ├─2016
+│  │  │  index.html
+│  │  │  
+│  │  └─08
+│  │          index.html
+│  │          
+│  ├─2018
+│  │  │  index.html
+│  │  │  
+│  │  └─11
+│  │          index.html
+│  │          
+│  ├─2019
+│  │  │  index.html
+│  │  │  
+│  │  ├─01
+│  │  │      index.html
+│  │  │      
+│  │  └─10
+│  │          index.html
+│  │          
+│  ├─2020
+│  │  │  index.html
+│  │  │  
+│  │  └─10
+│  │          index.html
+│  │          
+│  ├─2021
+│  │  │  index.html
+│  │  │  
+│  │  ├─01
+│  │  │      index.html
+│  │  │      
+│  │  ├─08
+│  │  │      index.html
+│  │  │      
+│  │  └─10
+│  │          index.html
+│  │          
+│  ├─2022
+│  │  │  index.html
+│  │  │  
+│  │  ├─03
+│  │  │      index.html
+│  │  │      
+│  │  ├─08
+│  │  │      index.html
+│  │  │      
+│  │  ├─10
+│  │  │      index.html
+│  │  │      
+│  │  ├─11
+│  │  │  │  index.html
+│  │  │  │  
+│  │  │  └─page
+│  │  │      └─2
+│  │  │              index.html
+│  │  │              
+│  │  └─page
+│  │      └─2
+│  │              index.html
+│  │              
+│  ├─2023
+│  │  │  index.html
+│  │  │  
+│  │  ├─03
+│  │  │      index.html
+│  │  │      
+│  │  └─11
+│  │          index.html
+│  │          
+│  ├─2024
+│  │  │  index.html
+│  │  │  
+│  │  ├─01
+│  │  │      index.html
+│  │  │      
+│  │  ├─05
+│  │  │      index.html
+│  │  │      
+│  │  ├─06
+│  │  │      index.html
+│  │  │      
+│  │  ├─07
+│  │  │      index.html
+│  │  │      
+│  │  ├─08
+│  │  │      index.html
+│  │  │      
+│  │  ├─11
+│  │  │      index.html
+│  │  │      
+│  │  ├─12
+│  │  │      index.html
+│  │  │      
+│  │  └─page
+│  │      └─2
+│  │              index.html
+│  │              
+│  ├─2025
+│  │  │  index.html
+│  │  │  
+│  │  ├─03
+│  │  │      index.html
+│  │  │      
+│  │  ├─04
+│  │  │      index.html
+│  │  │      
+│  │  └─06
+│  │          index.html
+│  │          
+│  └─page
+│      ├─2
+│      │      index.html
+│      │      
+│      ├─3
+│      │      index.html
+│      │      
+│      ├─4
+│      │      index.html
+│      │      
+│      ├─5
+│      │      index.html
+│      │      
+│      ├─6
+│      │      index.html
+│      │      
+│      └─7
+│              index.html
+│              
+├─categories
+│  │  index.html
+│  │  
+│  ├─learning
+│  │  │  index.html
+│  │  │  
+│  │  └─page
+│  │      ├─2
+│  │      │      index.html
+│  │      │      
+│  │      ├─3
+│  │      │      index.html
+│  │      │      
+│  │      ├─4
+│  │      │      index.html
+│  │      │      
+│  │      ├─5
+│  │      │      index.html
+│  │      │      
+│  │      └─6
+│  │              index.html
+│  │              
+│  ├─myessay
+│  │      index.html
+│  │      
+│  └─other
+│          index.html
+│          
+├─comments
+│      index.html
+│      
+├─cookies
+│      index.html
+│      
+├─copyright
+│      index.html
+│      
+├─css
+│      index.css
+│      var.css
+│      
+├─essay
+│      index.html
+│      
+├─icons
+│      1280x720.webp
+│      1280x720L.webp
+│      720x1280.webp
+│      720x1280L.webp
+│      icon-128x128.webp
+│      icon-144x144.webp
+│      icon-192x192.webp
+│      icon-384x384.webp
+│      icon-512x512.webp
+│      icon-66x66.webp
+│      icon-72x72.webp
+│      icon-96x96.webp
+│      loading.gif
+│      loading.webp
+│      w300-1.webp
+│      w300-2.webp
+│      w300.webp
+│      
+├─images
+│      ggL.webp
+│      乾清宫.webp
+│      社稷江山金殿.webp
+│      
+├─img
+│      10.webp
+│      11.webp
+│      12.webp
+│      32.png
+│      32.webp
+│      404-large.gif
+│      404-large.webp
+│      404.jpg
+│      404.webp
+│      cike.webp
+│      comment_bg.png
+│      comment_bg.webp
+│      default_cover.jpg
+│      default_cover.webp
+│      friend_404.gif
+│      friend_404.webp
+│      loading.gif
+│      loading.webp
+│      music.webp
+│      pic_crash-large.webp
+│      wx_reward_qr.webp
+│      wx_zf.png
+│      wx_zf.webp
+│      zfb.jpg
+│      zfb.webp
+│      
+├─js
+│  │  main.js
+│  │  tw_cn.js
+│  │  utils.js
+│  │  
+│  ├─anzhiyu
+│  │      ai_abstract.js
+│  │      comment_barrage.js
+│  │      people.js
+│  │      random_friends_post.js
+│  │      right_click_menu.js
+│  │      
+│  └─search
+│          algolia.js
+│          local-search.js
+│          
+├─json
+│      music.json
+│      
+├─link
+│      index.html
+│      
+├─music
+│      index.html
+│      
+├─page
+│  ├─2
+│  │      index.html
+│  │      
+│  ├─3
+│  │      index.html
+│  │      
+│  ├─4
+│  │      index.html
+│  │      
+│  ├─5
+│  │      index.html
+│  │      
+│  ├─6
+│  │      index.html
+│  │      
+│  └─7
+│          index.html
+│          
+├─posts
+│  ├─absolute-tan-tao
+│  │      index.html
+│  │      
+│  ├─anzhiyu-theme-tan-tao
+│  │      hexo-swpp.PNG
+│  │      index.html
+│  │      
+│  ├─c-yu-yan-zhi-zi-zeng-tan-tao
+│  │      index.html
+│  │      
+│  ├─cfpages-cacherules
+│  │      CFPages项目根目录的headers配置生效1.PNG
+│  │      CFPages项目根目录的headers配置生效1.webp
+│  │      CF控制台清除边缘缓存2.PNG
+│  │      CF控制台清除边缘缓存2.webp
+│  │      index.html
+│  │      
+│  ├─class-gou-zao-qi
+│  │      index.html
+│  │      
+│  ├─cloudflare-qu-yu-dns-pi-liang-shan-chu
+│  │      index.html
+│  │      
+│  ├─cloudns-yu-ming-tuo-guan-dao-cf
+│  │      CF管理的记录2.PNG
+│  │      CF管理的记录2.webp
+│  │      cloudns管理的记录1.PNG
+│  │      cloudns管理的记录1.webp
+│  │      index.html
+│  │      
+│  ├─commonjs-yu-es6module
+│  │      index.html
+│  │      
+│  ├─console-log-obj-tan-tao
+│  │      1.webp
+│  │      2.webp
+│  │      index.html
+│  │      
+│  ├─css-xuan-ze-qi-you-xian-ji-yu-quan-chong
+│  │      index.html
+│  │      
+│  ├─gong-quan-li-de-lao-long
+│  │      index.html
+│  │      
+│  ├─hexo-guo-lu-qi-jie-duan
+│  │      index.html
+│  │      
+│  ├─inline-block-jian-xi-xiao-chu
+│  │      index.html
+│  │      
+│  ├─java-class-zhong-de-gou-zao-fang-fa
+│  │      index.html
+│  │      
+│  ├─jiang-wen-ben-kuang-mo-ren-bei-jing-chong-zhi-wei-bai-se
+│  │      index.html
+│  │      
+│  ├─js-huo-qu-dang-qian-dian-ji-yuan-su-de-suo-yin
+│  │      index.html
+│  │      
+│  ├─js-jq-huo-qu-gun-dong-tiao-gao-du-ji-liu-lan-qi-kuan-gao
+│  │      index.html
+│  │      
+│  ├─js-shu-ju-lei-xing-zhuan-huan-ji-yun-suan-fu
+│  │      index.html
+│  │      
+│  ├─js-yu-jia-zai-qu-fen
+│  │      defer.PNG
+│  │      defer.webp
+│  │      defer与async对比.PNG
+│  │      defer与async对比.webp
+│  │      index.html
+│  │      
+│  ├─kali-po-jie-wifi
+│  │      1查看wlan网卡.webp
+│  │      2监听时生成的文件（监听中）.webp
+│  │      3攻击设备掉线重连后成功抓到包.webp
+│  │      4成功从密码字典中找到密码.webp
+│  │      index.html
+│  │      
+│  ├─lian-xiang-sou-suo-zhi-bai-du-jsonp
+│  │      1.webp
+│  │      2.webp
+│  │      3.webp
+│  │      index.html
+│  │      
+│  ├─lie
+│  │      index.html
+│  │      
+│  ├─liu-lang-di-qiu
+│  │      index.html
+│  │      
+│  ├─margin-chong-die-yu-bfc-tan-tao
+│  │      index.html
+│  │      
+│  ├─never-letting-go
+│  │      22.webp
+│  │      index.html
+│  │      
+│  ├─qing-chu-fu-dong-tan-tao
+│  │      1.webp
+│  │      2.webp
+│  │      3.webp
+│  │      index.html
+│  │      
+│  ├─serv00-setupalive-cftunnel
+│  │      index.html
+│  │      
+│  ├─set-yu-map
+│  │      index.html
+│  │      map-console.webp
+│  │      map.webp
+│  │      set-console.webp
+│  │      set.webp
+│  │      
+│  ├─shell-ji-github-workflow-chu-tan
+│  │      1-environment-url.webp
+│  │      2-部署到Vercel-指定项目.webp
+│  │      3-getVercelProjectInf-GET-domain.webp
+│  │      4-创建github发布状态-得到github发布ID.webp
+│  │      5-根据该github发布ID更新发布状态.webp
+│  │      index.html
+│  │      
+│  ├─shi-yong-surge-fa-bu-qian-duan-xiang-mu
+│  │      index.html
+│  │      
+│  ├─shu-zu-qu-chong-de-5-chong-fang-fa
+│  │      index.html
+│  │      
+│  ├─telegram-ce-shi
+│  │      index.html
+│  │      telegram-1.webp
+│  │      telegram-2.webp
+│  │      telegram-3.webp
+│  │      telegram-4.webp
+│  │      telegram-widget.html
+│  │      
+│  ├─twikoo-bu-shu
+│  │      index.html
+│  │      
+│  ├─vercel-bu-shu-fang-shi-tan-tao
+│  │      index.html
+│  │      vercel-git-hook.webp
+│  │      vercel-git.webp
+│  │      vercel-hook.webp
+│  │      
+│  ├─vue-zhong-transition-zhi-enter-leave-deng
+│  │      index.html
+│  │      vue-transition阶段.webp
+│  │      
+│  ├─wamp-server2.5-ban-ben-pei-zhi-duo-zhan-dian
+│  │      index.html
+│  │      
+│  ├─zi-fu-chuan-yu-shu-zu
+│  │      1-0.webp
+│  │      1-2.webp
+│  │      1.webp
+│  │      filter与map.webp
+│  │      index.html
+│  │      
+│  ├─zui-zhi-yu-pai-xu
+│  │      index.html
+│  │      
+│  └─zuo-zhong-you-san-lan-shi-bu-ju
+│          index.html
+│          双飞翼布局.gif
+│          双飞翼布局.webp
+│          圣杯布局.gif
+│          圣杯布局.webp
+│          
+├─privacy
+│      index.html
+│      
+├─projects
+│      index.html
+│      
+└─tags
+    │  index.html
+    │  
+    ├─C
+    │      index.html
+    │      
+    ├─CF
+    │      index.html
+    │      
+    ├─css
+    │  │  index.html
+    │  │  
+    │  └─page
+    │      └─2
+    │              index.html
+    │              
+    ├─hexo
+    │      index.html
+    │      
+    ├─java
+    │      index.html
+    │      
+    ├─js
+    │  │  index.html
+    │  │  
+    │  └─page
+    │      └─2
+    │              index.html
+    │              
+    ├─koa
+    │      index.html
+    │      
+    ├─php
+    │      index.html
+    │      
+    ├─vercel
+    │      index.html
+    │      
+    ├─vue
+    │      index.html
+    │      
+    ├─工具
+    │      index.html
+    │      
+    ├─政治
+    │      index.html
+    │      
+    └─电影
+            index.html
+            

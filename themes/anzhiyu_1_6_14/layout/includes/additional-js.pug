@@ -1,0 +1,168 @@
+//- script.
+//-   getScript("!{url_for(theme.asset.utils)}", {defer:true})
+//-   getScript("!{url_for(theme.asset.main)}", {defer:true})
+
+//- main脚本依赖懒加载，必须在前面
+if theme.lazyload.enable
+  script(async src=url_for(theme.asset.lazyload))
+
+script(defer src=url_for(theme.asset.utils))
+script(defer src=url_for(theme.asset.main))
+
+if (theme.icons && theme.icons.ali_iconfont_js)
+  script(async src=url_for(theme.icons.ali_iconfont_js))
+
+
+//- 控制台打印信息
+if theme.console.enable
+  != partial("includes/anzhiyu/log-js.pug", {}, { cache: true })
+
+//- 页脚计时器
+if theme.footer.runtime.enable
+  != partial("includes/third-party/runtime/runtime-js.pug", {}, { cache: true })
+
+!= partial("includes/third-party/effect", {}, { cache: true })
+if theme.visitorMail.enable
+  - const mail = theme.visitorMail.mail
+  script.
+    var visitorMail = "#{mail}";
+if theme.asset.meting_api
+  script.
+    var meting_api = "!{theme.asset.meting_api}";
+
+//- 气泡效果
+if theme.bubble.enable
+  script(defer data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js")
+
+//- 即刻依赖waterfall
+script(async data-pjax src=url_for(theme.asset.waterfall))
+
+//- iconfont依赖
+//- link(rel="stylesheet" href=url_for(theme.asset.ali_iconfont_css))
+//- script.
+//-    getCss("!{url_for(theme.asset.ali_iconfont_css)}")
+
+
+//- 聊天室
+//- != partial("includes/third-party/chat/index", {}, { cache: true })
+
+
+if theme.snackbar.enable
+  script(defer src=url_for(theme.asset.snackbar))
+
+
+!= partial("includes/third-party/prismjs", {}, { cache: true })
+
+//- 随机文章
+script(defer src="/anzhiyu/random.js")
+
+//- search
+if theme.algolia_search.enable
+  script(src=url_for(theme.asset.algolia_search))
+  script(src=url_for(theme.asset.instantsearch))
+  script(src=url_for(theme.asset.algolia_js))
+else if theme.local_search.enable
+  script(defer src=url_for(theme.asset.local_search))
+
+//- 深色模式粒子效果canvas
+if theme.universe.enable
+  canvas(id="universe")
+  script(defer src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/dark/dark.js")
+
+//- 翻译
+if theme.translate.enable
+  //- script.
+  //-   getScript("!{url_for(theme.asset.translate)}", {defer:true})
+  script(defer src=url_for(theme.asset.translate))
+
+//- 文章二维码
+script(defer src='https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js')
+
+if theme.pjax.enable
+  != partial("includes/third-party/pjax", {}, { cache: true })
+
+if theme.instantpage
+  //- script.
+  //-   getScript("!{url_for(theme.asset.instantpage)}", {defer:true}) 
+  script(defer src=url_for(theme.asset.instantpage), type='module')
+
+
+//- 中控台"全站最新评论"
+if theme.aside.enable && theme.newest_comments.enable
+  if theme.pjax.enable
+    != partial("includes/third-party/newest-comments/index", {}, { cache: true })
+  else if (!is_post() && page.aside !== false)
+    != partial("includes/third-party/newest-comments/index", {}, { cache: true })
+
+if theme.pangu.enable
+  != partial("includes/third-party/pangu.pug", {}, { cache: true })
+
+.js-pjax
+  //- 将当前路由的页面类型(由md页面文件front-matter中type属性决定)记录为name为page-type的input标签的value，utils.js会通过该标签再标记到body标签的type自定义属性，为动态加载不同的页面模块做准备
+  input(type="hidden" name="page-type" id="page-type" value=(page.type ? page.type : (is_post() ? "post" : (is_category() ? "categories" : "anzhiyu"))))
+
+  //- 处在首页时，加载页面顶部的people随便逛逛模块(与响应式隐藏显示无关)
+  if theme.peoplecanvas.enable && is_home()
+  script.
+    if (typeof gsap === "object") {
+      getScript("!{url_for(theme.asset.people_js)}", {defer:true})
+    } else {
+      getScript("!{url_for(theme.asset.gsap_js)}").then(()=>{
+        getScript("!{url_for(theme.asset.people_js)}", {defer:true})
+      });
+    }
+
+  //- 首页的"文章卡片(post-ui模板位置)"若设置为显示相应评论数量时，加载 评论 计数模块
+  if needLoadCountJs
+    != partial("includes/third-party/card-post-count/index", {}, { cache: true })
+
+  //- 文章页顶部若设置为显示评论数量时(由md页面文件front-matter中comment属性决定)，加载 评论 计数模块;
+  //- 将评论组件挂载到指定dom，评论列表加载完毕后将列表中的图片加载到灯箱；
+  //- 决定是否 懒加载 评论组件；
+  if commentsJsLoad
+    include ./third-party/comments/js.pug
+
+  //- 补充：中控台"全站最新评论",无需pjax实时更新,它及上方twikoo简易交互均以twikoo插件加载完毕为前提
+
+  //- 所有当前页相关评论及回复扁平化按时间排序(xhr携带token与twikoo数据库交互)，数据库中的图片和代码被替换为"图片","代码"显示在弹幕中)
+  if theme.comment_barrage_config.enable && theme.comments.use == 'Twikoo' && page.comments
+    script(defer src=url_for(theme.asset.comment_barrage_js))
+
+  if loadSubJs
+    include ./third-party/subtitle.pug
+
+  //- include ./third-party/math/index.pug
+
+if theme.aplayerInject && theme.aplayerInject.enable
+  if theme.pjax.enable || theme.aplayerInject.per_page
+    include ./third-party/aplayer.pug
+  else if page.aplayer
+    include ./third-party/aplayer.pug
+
+if theme.medium_zoom
+  script(defer src=url_for(theme.asset.medium_zoom))
+else if theme.fancybox
+  //- script.
+  //-   getScript("!{url_for(theme.asset.fancybox)}", {defer:true}) 
+  script(defer src=url_for(theme.asset.fancybox))
+
+
+if theme.busuanzi.site_uv || theme.busuanzi.site_pv || theme.busuanzi.page_pv
+  script(async data-pjax src= theme.asset.busuanzi || '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js')
+if theme.accesskey.enable
+  script(defer charset="UTF-8" src=url_for(theme.asset.accesskey_js))
+
+//- 右键菜单
+if (theme.rightClickMenu && theme.rightClickMenu.enable)
+  script(defer src=url_for(theme.asset.right_click_menu_js))
+
+//- google_adsense
+//- script.
+//-   getScript("!{url_for(theme.google_adsense.js)}", {defer:true})
+
+//- !=partial('includes/head/google_adsense', {}, {cache: true})
+
+if is_current("/") && theme.greetingBox.enable
+  #greetingBox
+
+!= fragment_cache('injectBottom', function(){return injectHtml(theme.inject.bottom)})

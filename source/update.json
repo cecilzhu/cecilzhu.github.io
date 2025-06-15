@@ -1,0 +1,11 @@
+{
+    "global": 1,
+    "info": [{
+            "version": 0,
+            "change": [{
+                    "flag": "end",
+                    "value": ["/cacheList.json", "/update.json"]
+            }]
+        }
+    ]
+}

@@ -1,0 +1,99 @@
+- class_name: 关于页
+  subtitle: 流星聚集地，灵感的源泉✨
+  avatarImg: /icons/icon-192x192.webp
+  avatarSkills:
+    left:
+      - 🤖️ 数码科技爱好者
+      - 🔍 分享与热心帮助
+    right:
+      - 智能家居小能手 🏠
+      - 妥妥白日梦想家 🏃
+  name: 慢才后生
+  description: 也可以叫我 Eamon，一个 白日梦想家。
+  aboutsiteTips:
+    tips: 理想
+    title1: 很丰满，
+    title2: 现实
+    word:
+      - 很
+      - 骨
+      - 感
+  helloAbout: Hello there!
+  maxim:
+    maxim_tips: 座右铭
+    maxim_top: 有人的地方，
+    maxim_bottom: 就有江湖。
+  game:
+    game_tips: 爱好游戏
+    game_title: 刺客信条
+    game_uid:
+    game_bg: /img/cike.webp
+  music:
+    music_tips: 音乐偏好
+    music_title: 电子、民谣、华语流行、纯音乐等。。不追星，好听最重要！
+    music_bg: /img/music.webp
+    music_link: /music/?id=364547630&server=netease
+  reward_list:
+    - name: 海阔蓝
+      amount: 6
+      datatime: 2024-03-28
+    - name: lin
+      amount: 2
+      datatime: 2024-07-08
+  # 已注释掉 与以下内容渲染相关的pug代码  blog\themes\anzhiyu\layout\includes\page\about.pug
+  skillsTips:
+    enable: false
+    tips: 技能
+    title: 开启创造力
+  careers:
+    enable: false
+    tips: 生涯
+    title: 无限进步
+    list:
+      - desc: EDU,软件工程专业
+        color: "#357ef5"
+      - desc: EDU,软件工程专业
+        color: "#357ef5"
+      - desc: EDU,软件工程专业
+        color: "#357ef5"
+    img: https://bu.dusays.com/2023/04/21/644287166329b.png
+  map:
+    enable: false
+    title: 我现在住在
+    StrengthenTitle: 中国，长沙市
+    background: https://bu.dusays.com/2023/07/05/64a4c61cb20ef.jpg
+    backgroundDark: https://bu.dusays.com/2023/07/05/64a4c63495ac5.jpg
+  selfInfo:
+    enable: false
+    selfInfoTips1: 生于
+    selfInfoContentYear: 2002
+    selfInfoTips2: 湖南信息学院
+    selfInfoContent2: 软件工程
+    selfInfoTips3: 现在职业
+    selfInfoContent3: 大三学生👨‍🎓
+  personalities:
+    enable: false
+    author_name: 执政官
+    personality_type: ESFJ-A
+    photo_url: https://bu.dusays.com/2023/07/05/64a4c63495ac5.jpg
+    personality_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.8/img/svg/ESFJ-A.svg
+    name_url: https://www.16personalities.com/ch/esfj-%E4%BA%BA%E6%A0%BC
+  buff:
+    enable: false
+    buff_tips: 特长
+    buff_top: 脑回路新奇的 酸菜鱼
+    buff_bottom: 二次元指数 MAX
+  comic:
+    enable: false
+    comic_tips: 爱好番剧
+    comic_title: 追番
+    comic_list:
+      - name: 约定的梦幻岛
+        href: https://www.bilibili.com/bangumi/media/md5267750/?spm_id_from=666.25.b_6d656469615f6d6f64756c65.1
+        cover: https://bu.dusays.com/2023/05/27/647166c44b414.webp
+  like:
+    enable: false
+    like_tips: 关注偏好
+    like_title: 数码科技
+    like_bg: https://bu.dusays.com/2022/12/06/638f5f05ce1f7.jpg
+    like_bottom: 手机、电脑软硬件

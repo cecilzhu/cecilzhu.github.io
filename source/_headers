@@ -1,0 +1,58 @@
+# 为所有静态资源设置缓存策略
+# 一年31536000，一周604800，一天86400
+
+/search.xml
+  Content-Type: application/xml
+  Cache-Control: public, max-age=600, s-maxage=3600
+
+/
+  Cache-Control: public, max-age=600, s-maxage=3600
+
+/posts/*
+  Cache-Control: public, max-age=600, s-maxage=3600
+
+/*.css
+  Content-Type: text/css; charset=utf-8
+  Cache-Control: public, max-age=86400, s-maxage=31536000
+
+
+/*.js
+  Content-Type: application/javascript
+  Cache-Control: public, max-age=604800, s-maxage=31536000
+
+/json/*
+  Content-Type: application/json
+  Cache-Control: public, max-age=604800, s-maxage=31536000
+
+/icons/*
+  Content-Type: image/webp
+  Cache-Control: public, max-age=604800, s-maxage=31536000
+
+/img/*
+  Content-Type: image/webp
+  Cache-Control: public, max-age=604800, s-maxage=31536000
+
+/privacy/*
+  Content-Type: text/html; charset=utf-8
+  Cache-Control: public, max-age=604800, s-maxage=31536000
+
+/copyright/*
+  Cache-Control: public, max-age=604800, s-maxage=31536000
+
+/cookies/*
+  Cache-Control: public, max-age=604800, s-maxage=31536000
+
+/link/*
+  Cache-Control: public, max-age=604800, s-maxage=31536000
+
+/about/*
+  Cache-Control: public, max-age=604800, s-maxage=31536000
+
+/comments/*
+  Cache-Control: public, max-age=604800, s-maxage=31536000
+
+/music/*
+  Cache-Control: public, max-age=604800, s-maxage=31536000
+
+/404
+  Cache-Control: public, max-age=604800, s-maxage=31536000

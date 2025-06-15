@@ -1,0 +1,17 @@
+if (theme.google_adsense && theme.google_adsense.enable)
+  //- script(async src=theme.google_adsense.js crossorigin=theme.google_adsense.crossorigin)
+  script.
+    window.addEventListener('load', function () {
+      const script = document.createElement('script');
+      script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+      script.async = true;
+      script.crossorigin = true;
+      document.body.appendChild(script);
+    });
+
+  if theme.google_adsense.auto_ads
+    script.
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: '!{theme.google_adsense.client}',
+        enable_page_level_ads: '!{theme.google_adsense.enable_page_level_ads}'
+      });

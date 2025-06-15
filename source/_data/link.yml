@@ -1,0 +1,38 @@
+- class_name: 推荐博客
+  flink_style: telescopic
+  hundredSuffix: ""
+  link_list:
+    - name: 安知鱼
+      link: https://blog.anheyu.com/
+      avatar: https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg
+      descr: 生活明朗，万物可爱
+      siteshot: https://npm.elemecdn.com/anzhiyu-theme-static@1.1.6/img/blog.anheyu.com.jpg
+      color: vip
+      tag: 技术
+    - name: 慢才后生
+      link: https://eamon.dpdns.org/
+      avatar: /icons/icon-96x96.webp
+      descr: 流星聚集地，灵感的源泉
+      siteshot: /icons/w300.webp
+      color: '#646cff'
+      tag: 生活
+    - name: 备站1
+      link: https://nt.eamon.dpdns.org/
+      avatar: /icons/icon-96x96.webp
+      descr: 流星聚集地，灵感的源泉
+      siteshot: /icons/w300-1.webp
+      # recommend: true
+      color: '#646cff'
+      tag: 备站1
+
+- class_name: 小伙伴
+  class_desc: 那些人，那些事
+  flink_style: anzhiyu
+  hundredSuffix: ""
+  link_list:
+    - name: 备站2
+      link: https://eamon.ggff.net/
+      avatar: /icons/icon-96x96.webp
+      descr: 流星聚集地，灵感的源泉
+      color: '#646cff'
+      tag: 备站2

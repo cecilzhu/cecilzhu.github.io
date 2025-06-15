@@ -1,0 +1,233 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+  
+# Site
+title: 流星聚集地
+subtitle: 灵感的源泉
+description: <div style="text-align:center;">有人的地方啊，就有<strong style="color:#faff00;">江湖！</strong><br/>探讨“<strong style="color:#faff00">前端技术</strong>”、分享“<strong style="color:#faff00">知识</strong>”、记录“<strong style="color:#faff00">生活</strong>”。</div>
+# <div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有关于<b style="color:#fff">产品、设计、开发</b>相关的问题和看法，还有<b style="color:#fff">文章翻译</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">相信你可以在这里找到对你有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div> # 默认为站点描述
+keywords: 慢才后生,博客,个人网站,学习,分享,٩(๑•̀ω•́๑)۶灵感的源泉
+author: 慢才后生
+language: zh-Hans
+timezone: Asia/Shanghai
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://eamon.dpdns.org/
+root: /
+# permalink: :year/:month/:day/:title/
+permalink: posts/:title/
+permalink_defaults:
+# 将 文件名所含中文 自动转为拼音
+permalink_pinyin:
+  enable: enable
+  separator: '-' # 若链接中使用'_'，twikoo评论通知中的预览链接会被转义出错
+
+# 简化生成的内部链接：
+# trailing_index: false # 原链接"/posts/a/index.html" 变为 "/posts/a/",设为false后，线上线下均不影响对index.html资源的映射
+# trailing_html: false # 原链接"/posts/a.html" 变为 "/posts/a"。本地预览时须置为true,否则无法正确映射".html"后缀资源
+#【以下3点总结：“trailing_html的值”localhost预览是置为true，上线之前置为false】
+# 1.线上环境CF pages会自动隐去".html"或"index.html",但本地localhost预览须置为true，默认使用".html"后缀；
+# 2.线上线下浏览器各自正常访问时的url不同（本质都是html文件），“文章内留言”也就不能两处都显示（留言板不同环境下url相同，不影响）；为保证线上显示，留言系统数据库内url须抛弃".html"后缀】
+# 3.若生成的内部链接为"/posts/a.html"，线上环境点击该链接还会重定向到"/posts/a"，资源浪费。
+pretty_urls:
+  trailing_index: false  # 默认true指生成的内部链接中保留'index.html'
+  trailing_html: false    # 默认true指生成的内部链接中保留'.html'后缀
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+include: # 将source中的文件直接复制到public目录
+  - _headers # 配置CF pages服务器header响应头信息
+skip_render: # 或在目标md中设置front-matter选项published: false
+  - _posts/基于PHP的个人博客网站的设计与实现.md
+  - _posts/telegram测试/telegram-widget.html
+  - google3255bc8acaaacc24.html
+  - baidu_verify_codeva-SUbWzTSl9Z.html
+  - f8aaa9c278699ac36ad62dbd2607c5a6.txt
+  - README.md
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: true # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: true # hexo new "文章名称"后，自动生成一个与之对应的资源文件夹
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+  
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 6
+  order_by: -date
+  
+# Category & Tag
+# default_category: uncategorized
+default_category: 学习
+category_map: 
+    学习: learning
+    随笔: myessay
+    生活: life
+    其它: other
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 6
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: anzhiyu_1_6_14
+
+# pwa资源优化
+swpp:
+  # 是否启用插件
+  enable: true
+  
+  # 为true时，执行hexo d会自动执行hexo swpp
+  auto_exec: true
+  npm_url: 'https://registry.npmmirror.com'
+
+# APlayer
+# https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md
+aplayer:
+  meting: true
+  asset_inject: false # 该metingJS版本与主题不兼容！置为true使用与aplayer相关的本地代码（依赖Meting.js本地有修改），而非默认的CDN资源
+
+# 优化seo引擎抓取sitemap
+sitemap:
+  path: 
+    # - sitemap_index.xml
+    - sitemap.xml
+    - sitemap.txt
+  template: # ./sitemap_template.xml
+  template_txt: # ./sitemap_template.txt
+  rel: false
+  tags: false
+  categories: false
+  site_url: https://eamon.dpdns.org/
+  gzip: false,
+  max_urls_per_sitemap: 500
+
+#envelope_comment
+#seehttps://akilar.top/posts/e2d3c450/
+envelope_comment:
+  enable: true #控制开关
+  custom_pic:
+    cover: /img/11.webp # https://npm.elemecdn.com/hexo-butterfly-envelope/lib/violet.jpg #信笺头部图片
+    line: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/line.png #信笺底部图片
+    beforeimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/before.png # 信封前半部分
+    afterimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/after.png # 信封后半部分
+  message: #信笺正文，多行文本，写法如下
+    - 有什么想问的？
+    - 有什么想说的？
+    - 有什么想吐槽的？
+    - 哪怕是有什么想吃的，都可以告诉我哦~
+  bottom: 自动书记人偶竭诚为您服务！ #仅支持单行文本
+  height: #1024px，信封划出的高度
+  path: #【可选】comments 的路径名称。默认为 comments，生成的页面为 comments/index.html
+  front_matter: #【可选】comments页面的 front_matter 配置
+    title: 留言板
+    comments: true
+    top_img: false
+    type: envelope
+
+# electric_clock
+# see https://blog.anheyu.com/posts/fc18.html
+electric_clock:
+  enable: true # 开关
+  priority: #过滤器优先权
+  enable_page: all # 应用页面
+  exclude: #以下页面“不挂载clock插件”
+    - /link/
+    - /music/
+    - /about/
+    - /essay/
+  layout: # 挂载容器类型
+    type: class
+    name: sticky_layout
+    index: 0
+  loading: /icons/loading.gif #加载动画自定义,默认 https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif
+  clock_css: https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.8/lib/clock.min.css #默认 https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css
+  clock_js: #默认 https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js
+  # ip_api: false # https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0
+  qweather_key: 7a8424067df3431682688b6d3c4aa14b # 和风天气key
+  gaud_map_key: 42bfe95a2f2a3447166ce8c7503daa8c # 高得地图web服务key 
+  default_rectangle: false # 开启后将一直显示rectangle位置的天气，否则将获取访问者的地理位置与天气
+  rectangle: 121.47,31.30 #江湾 获取访问者位置失败时会显示该位置的天气，同时该位置为开启default_rectangle后的位置
+
+
+# 静态资源压缩
+minify:
+  preview: false ## 本地预览时是否压缩
+  exclude: ['*.min.*']
+  html:
+    enable: true
+    # minifyJS: true, // Compressed JavaScript
+    # minifyCSS: true, // CSS Compressed
+    # removeComments: true, // Remove the comments
+    # collapseWhitespace: false, // Delete any extra space
+    # removeAttributeQuotes: false // Delete attribute quotes
+  css:
+    enable: false
+    advanced: true
+  js:
+    enable: false
+    mangle: false  # 禁止变量和函数名混淆
+
+# 搜索引擎收录
+hexo_submit_urls_to_search_engine:
+  submit_condition: count #链接被提交的条件，可选值：count | period 现仅支持count
+  count: 0 # 提交最新的10个链接
+  period: 900 # 提交修改时间在 900 秒内的链接
+  google: 1 # 是否向Google提交，可选值：1 | 0（0：否；1：是）
+  bing: 1 # 是否向bing提交，可选值：1 | 0（0：否；1：是）
+  baidu: 0 # 是否向baidu提交，可选值：1 | 0（0：否；1：是）
+  txt_path: submit_urls.txt # 文本文档名， 需要推送的链接会保存在此文本文档里
+  baidu_host: https://eamon.dpdns.org/ # 在百度站长平台中注册的域名
+  baidu_token: # 请注意这是您的秘钥， 所以请不要把它直接发布在公众仓库里!
+  bing_host: https://eamon.dpdns.org/ ## 在bing站长平台中注册的域名
+  bing_token: a26c656c79e24edfba788391a7316e1f ## 请注意这是您的秘钥， 所以请不要把它直接发布在公众仓库里!
+  google_host: https://eamon.dpdns.org/ ## 在google站长平台中注册的域名
+  google_key_file: eamonblog-3e0b6a943cd7.json #存放google key的json文件，放于网站根目录（与hexo _config.yml文件位置相同），请不要把json文件内容直接发布在公众仓库里!
+  google_proxy: 0 # http://127.0.0.1:8080 # 向谷歌提交网址所使用的系统 http 代理，填 0 不使用
+  replace: 0  # 是否替换链接中的部分字符串，可选值：1 | 0（0：否；1：是）
+  # find_what: http://cjh0613.github.io/blog
+  # replace_with: https://cjh0613.com
+
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  # - type: cjh_google_url_submitter
+  # - type: cjh_bing_url_submitter
+  # - type: cjh_baidu_url_submitter
+  - type: git
+    # repo: https://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@github.com/cecilzhu/cecilzhu.github.io.git
+    repo: git@github.com:cecilzhu/cecilzhu.github.io.git
+    branch: dev
