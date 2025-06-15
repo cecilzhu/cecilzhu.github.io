@@ -1,3 +1,4 @@
+## anzhiyu_1.6.14主题中，`被修改过的文件`列表
 #### E:\hexopack\blog\themes\anzhiyu_1_6_14
 更改sw缓存版本更新后的提示、“更改音乐播放进度 适配，以及广告资源等”跳过sw缓存、sw缓存所有静态资源
 * sw-rules.js
