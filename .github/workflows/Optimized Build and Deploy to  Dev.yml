@@ -1,0 +1,65 @@
+name: Optimized Build and Deploy
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 1  # 浅层克隆提高速度
+
+    # ===== 缓存优化 =====
+    - name: Cache node modules
+      uses: actions/cache@v3
+      id: cache-node-modules
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+        
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'  # 自动缓存npm包
+
+    - name: Install dependencies
+      if: steps.cache-node-modules.outputs.cache-hit != 'true'
+      run: |
+        npm install -g hexo-cli
+        npm ci --prefer-offline
+
+    # ===== 增量生成 =====
+    - name: Generate static files
+      run: |
+        # 启用Hexo增量生成
+        hexo clean
+        hexo generate --draft --dirty
+        
+    # ===== 简化部署（无历史）=====
+    - name: Deploy to dev branch (no history)
+      run: |
+        cd public
+        
+        # 初始化全新仓库
+        git init
+        git checkout -b dev
+        
+        # 配置用户信息
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        
+        # 添加所有文件
+        git add -A .
+        
+        # 提交并强制推送（无历史）
+        git commit -m "Deploy: ${{ github.sha }}"
+        git remote add origin https://github.com/cecilzhu/cecilzhu.github.io.git
+        git push --force --set-upstream origin dev
