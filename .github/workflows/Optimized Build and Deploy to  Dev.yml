@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm config set registry https://registry.npmjs.org/
+          echo "registry=https://registry.npmjs.org/" > ~/.npmrc
           npm cache clean --force
           npm install -g hexo-cli
           npm install
