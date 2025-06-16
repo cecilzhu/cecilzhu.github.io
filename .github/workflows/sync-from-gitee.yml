@@ -2,7 +2,7 @@ name: Auto Sync from Gitee
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # 每5分钟同步一次
+    - cron: '*/1 * * * *'  # 每5分钟同步一次
   workflow_dispatch:
 
 jobs:
