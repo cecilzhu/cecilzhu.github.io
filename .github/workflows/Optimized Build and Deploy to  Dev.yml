@@ -20,8 +20,9 @@ jobs:
       - name: Install dependencies
         run: |
           echo "registry=https://registry.npmjs.org/" > ~/.npmrc
+          rm -f package-lock.json
+          rm -rf node_modules
           npm cache clean --force
-          npm install -g hexo-cli
           npm install
 
       - name: Build site
