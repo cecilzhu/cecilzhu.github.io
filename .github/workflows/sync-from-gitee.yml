@@ -2,7 +2,7 @@ name: Auto Sync from Gitee
 
 on:
   schedule:
-    - cron: '*/1 * * * *'  # 每5分钟同步一次
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -14,13 +14,35 @@ jobs:
         with:
           ref: master
           fetch-depth: 0
-          # 使用新令牌检出
           token: ${{ secrets.FULL_ACCESS_PAT }}
 
+      - name: Cache node modules
+        uses: actions/cache@v3
+        id: npm-cache
+        with:
+          path: |
+            node_modules
+            .npm_cache
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          
       - name: Configure Git
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
+
+      - name: Install dependencies
+        run: |
+          npm config set registry https://registry.npmmirror.com
+          npm config set strict-ssl false
+          
+          if [ "${{ steps.npm-cache.outputs.cache-hit }}" != "true" ]; then
+            npm install -g hexo-cli --cache .npm_cache --prefer-offline
+            npm install --no-optional --cache .npm_cache --prefer-offline
+          fi
+          
+          npm config set strict-ssl true
+        env:
+          NODE_OPTIONS: "--max_old_space_size=4096"
 
       - name: Add Gitee Remote
         run: |
@@ -34,5 +56,4 @@ jobs:
 
       - name: Push to GitHub
         run: |
-          # 使用新令牌推送
           git push https://${{ secrets.FULL_ACCESS_PAT }}@github.com/${{ github.repository }}.git master --force
