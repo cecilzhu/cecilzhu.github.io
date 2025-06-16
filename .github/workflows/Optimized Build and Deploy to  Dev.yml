@@ -37,11 +37,14 @@ jobs:
             ${{ runner.os }}-hexo-public-
 
 # 更换远程依赖镜像源，修复hexo-wordcount插件镜像
-      - name: Install dependencies
+      - name: Clean install from fresh registry
         run: |
           echo "registry=https://registry.npmjs.org/" > ~/.npmrc
-          npm ci
-          
+          rm -f package-lock.json
+          rm -rf node_modules
+          npm cache clean --force
+          npm install
+
 # 未安装hexo-cli插件，须手动将”hexo命令“的具体路径，添加到环境变量 PATH
       - name: Add node_modules/.bin to PATH
         run: echo "$(pwd)/node_modules/.bin" >> $GITHUB_PATH
