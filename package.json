@@ -42,7 +42,7 @@
     "hexo-swpp": "^3.3.1",
     "hexo-tag-aplayer": "^3.0.4",
     "hexo-wordcount": "^6.0.1",
-    "mini-css-extract-plugin": "^0.10.0",
+    "mini-css-extract-plugin": "^2.9.2",
     "swpp-backends": "^2.3.11",
     "terser-webpack-plugin": "^5.3.10",
     "webpack": "^5.95.0",
