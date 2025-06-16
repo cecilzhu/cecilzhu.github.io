@@ -8,28 +8,46 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        # fetch-depth 默认值为 1，可省略不写，完整克隆为 fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: 'npm' # 自动缓存 ~/.npm
 
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Cache Hexo public directory
+        uses: actions/cache@v3
+        with:
+          path: public
+          key: ${{ runner.os }}-hexo-public-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-hexo-public-
+
+# 更换远程依赖镜像源，修复hexo-wordcount插件镜像
       - name: Install dependencies
         run: |
           echo "registry=https://registry.npmjs.org/" > ~/.npmrc
-          rm -f package-lock.json
-          rm -rf node_modules
-          npm cache clean --force
-          npm install
-
+          npm ci
+          
+# 未安装hexo-cli插件，须手动将”hexo命令“的具体路径，添加到环境变量 PATH
       - name: Add node_modules/.bin to PATH
         run: echo "$(pwd)/node_modules/.bin" >> $GITHUB_PATH
 
       - name: Build site
-        run: hexo generate
+        run: hexo generate --dirty && hexo swpp
 
       - name: Deploy to dev branch using token
         env:
@@ -44,3 +62,5 @@ jobs:
           git add .
           git commit -m "Deploy by GitHub Actions"
           git push --force origin dev
+
+
