@@ -1,0 +1,40 @@
+name: Hexo Build and Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: |
+          npm install -g hexo-cli
+          npm install
+
+      - name: Build site
+        run: hexo generate
+
+      - name: Deploy to dev branch using token
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          cd public
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote add origin https://x-access-token:${GH_TOKEN}@github.com/cecilzhu/cecilzhu.github.io.git
+          git checkout -b dev
+          git add .
+          git commit -m "Deploy by GitHub Actions"
+          git push --force origin dev
