@@ -1,0 +1,9 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"          # 根目录下的 package.json
+    schedule:
+      interval: "weekly"    # 每周检查一次
+    ignore:
+      - dependency-name: "braces"
+        versions: ["<3.0.3"]   # 忽略低于 3.0.3 的版本升级建议（因为无安全版本可用）
