@@ -19,6 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          npm config set registry https://registry.npmjs.org/
           npm install -g hexo-cli
           npm install
 
