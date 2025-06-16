@@ -18,7 +18,7 @@
     "axios": "^1.7.9",
     "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",
-    "css-minimizer-webpack-plugin": "^7.0.0",
+    "css-minimizer-webpack-plugin": "^7.0.2",
     "gray-matter": "^4.0.3",
     "hexo": "^7.0.0",
     "hexo-asset-img": "^1.1.0",
