@@ -4,7 +4,7 @@
   <url>
     <loc>https://eamon.dpdns.org/manifest.json</loc>
     
-    <lastmod>2025-06-19T16:54:29.712Z</lastmod>
+    <lastmod>2025-06-19T18:37:30.460Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -13,7 +13,7 @@
   <url>
     <loc>https://eamon.dpdns.org/update.json</loc>
     
-    <lastmod>2025-06-19T16:54:29.712Z</lastmod>
+    <lastmod>2025-06-19T18:37:30.460Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -22,7 +22,7 @@
   <url>
     <loc>https://eamon.dpdns.org/json/music.json</loc>
     
-    <lastmod>2025-06-19T16:54:29.712Z</lastmod>
+    <lastmod>2025-06-19T18:37:30.460Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -31,7 +31,7 @@
   <url>
     <loc>https://eamon.dpdns.org/link/</loc>
     
-    <lastmod>2025-06-19T16:54:29.712Z</lastmod>
+    <lastmod>2025-06-19T18:37:30.460Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -40,7 +40,7 @@
   <url>
     <loc>https://eamon.dpdns.org/tags/</loc>
     
-    <lastmod>2025-06-19T16:54:29.712Z</lastmod>
+    <lastmod>2025-06-19T18:37:30.460Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -49,7 +49,7 @@
   <url>
     <loc>https://eamon.dpdns.org/music/</loc>
     
-    <lastmod>2025-06-19T16:54:29.712Z</lastmod>
+    <lastmod>2025-06-19T18:37:30.460Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -58,7 +58,7 @@
   <url>
     <loc>https://eamon.dpdns.org/privacy/</loc>
     
-    <lastmod>2025-06-19T16:54:29.712Z</lastmod>
+    <lastmod>2025-06-19T18:37:30.460Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -67,7 +67,7 @@
   <url>
     <loc>https://eamon.dpdns.org/essay/</loc>
     
-    <lastmod>2025-06-19T16:54:29.709Z</lastmod>
+    <lastmod>2025-06-19T18:37:30.456Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -76,16 +76,7 @@
   <url>
     <loc>https://eamon.dpdns.org/cacheList.json</loc>
     
-    <lastmod>2025-06-19T16:54:29.707Z</lastmod>
-    
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>     
-  </url>
-  
-  <url>
-    <loc>https://eamon.dpdns.org/about/</loc>
-    
-    <lastmod>2025-06-19T16:54:29.707Z</lastmod>
+    <lastmod>2025-06-19T18:37:30.453Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -94,16 +85,7 @@
   <url>
     <loc>https://eamon.dpdns.org/categories/</loc>
     
-    <lastmod>2025-06-19T16:54:29.707Z</lastmod>
-    
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>     
-  </url>
-  
-  <url>
-    <loc>https://eamon.dpdns.org/archives/</loc>
-    
-    <lastmod>2025-06-19T16:54:29.707Z</lastmod>
+    <lastmod>2025-06-19T18:37:30.453Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -112,7 +94,7 @@
   <url>
     <loc>https://eamon.dpdns.org/comments/</loc>
     
-    <lastmod>2025-06-19T16:54:29.707Z</lastmod>
+    <lastmod>2025-06-19T18:37:30.453Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -121,7 +103,25 @@
   <url>
     <loc>https://eamon.dpdns.org/copyright/</loc>
     
-    <lastmod>2025-06-19T16:54:29.707Z</lastmod>
+    <lastmod>2025-06-19T18:37:30.453Z</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>     
+  </url>
+  
+  <url>
+    <loc>https://eamon.dpdns.org/about/</loc>
+    
+    <lastmod>2025-06-19T18:37:30.452Z</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>     
+  </url>
+  
+  <url>
+    <loc>https://eamon.dpdns.org/archives/</loc>
+    
+    <lastmod>2025-06-19T18:37:30.452Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -526,7 +526,7 @@
 
   <url>
     <loc>https://eamon.dpdns.org/</loc>
-    <lastmod>2025-06-19T16:55:48.761Z</lastmod>
+    <lastmod>2025-06-19T18:38:51.805Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>       
   </url>
