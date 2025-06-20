@@ -11,9 +11,6 @@
 /update.json
   Cache-Control: no-cache
 
-/
-  Cache-Control: public, max-age=600, s-maxage=3600
-
 /posts/*
   Cache-Control: public, max-age=600, s-maxage=3600
 
