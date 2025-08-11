@@ -30,6 +30,10 @@
   Content-Type: application/json
   Cache-Control: public, max-age=604800, s-maxage=31536000
 
+/pdf/*
+  Content-Type: application/pdf
+  Cache-Control: public, max-age=604800, s-maxage=31536000
+
 /icons/*
   Content-Type: image/webp
   Cache-Control: public, max-age=604800, s-maxage=31536000
