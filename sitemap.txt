@@ -2,10 +2,10 @@ https://eamon.dpdns.org/update.json
 https://eamon.dpdns.org/tags/
 https://eamon.dpdns.org/privacy/
 https://eamon.dpdns.org/manifest.json
-https://eamon.dpdns.org/json/music.json
-https://eamon.dpdns.org/link/Untitled-1
 https://eamon.dpdns.org/link/
 https://eamon.dpdns.org/music/
+https://eamon.dpdns.org/json/music.json
+https://eamon.dpdns.org/link/Untitled-1
 https://eamon.dpdns.org/essay/
 https://eamon.dpdns.org/posts/deng-ji/
 https://eamon.dpdns.org/cacheList.json
