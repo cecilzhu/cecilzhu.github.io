@@ -4,7 +4,7 @@
   <url>
     <loc>https://eamon.dpdns.org/update.json</loc>
     
-    <lastmod>2026-04-20T14:05:08.029Z</lastmod>
+    <lastmod>2026-04-20T14:18:52.555Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -13,7 +13,7 @@
   <url>
     <loc>https://eamon.dpdns.org/tags/</loc>
     
-    <lastmod>2026-04-20T14:05:08.029Z</lastmod>
+    <lastmod>2026-04-20T14:18:52.555Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -22,7 +22,7 @@
   <url>
     <loc>https://eamon.dpdns.org/privacy/</loc>
     
-    <lastmod>2026-04-20T14:05:08.029Z</lastmod>
+    <lastmod>2026-04-20T14:18:52.555Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -31,7 +31,7 @@
   <url>
     <loc>https://eamon.dpdns.org/manifest.json</loc>
     
-    <lastmod>2026-04-20T14:05:08.018Z</lastmod>
+    <lastmod>2026-04-20T14:18:52.543Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -40,7 +40,7 @@
   <url>
     <loc>https://eamon.dpdns.org/json/music.json</loc>
     
-    <lastmod>2026-04-20T14:05:08.018Z</lastmod>
+    <lastmod>2026-04-20T14:18:52.543Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -49,7 +49,7 @@
   <url>
     <loc>https://eamon.dpdns.org/link/Untitled-1</loc>
     
-    <lastmod>2026-04-20T14:05:08.018Z</lastmod>
+    <lastmod>2026-04-20T14:18:52.543Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -58,7 +58,7 @@
   <url>
     <loc>https://eamon.dpdns.org/link/</loc>
     
-    <lastmod>2026-04-20T14:05:08.018Z</lastmod>
+    <lastmod>2026-04-20T14:18:52.543Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -67,7 +67,7 @@
   <url>
     <loc>https://eamon.dpdns.org/music/</loc>
     
-    <lastmod>2026-04-20T14:05:08.018Z</lastmod>
+    <lastmod>2026-04-20T14:18:52.543Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -76,16 +76,7 @@
   <url>
     <loc>https://eamon.dpdns.org/essay/</loc>
     
-    <lastmod>2026-04-20T14:05:08.014Z</lastmod>
-    
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>     
-  </url>
-  
-  <url>
-    <loc>https://eamon.dpdns.org/posts/deng-ji/</loc>
-    
-    <lastmod>2026-04-20T14:05:08.013Z</lastmod>
+    <lastmod>2026-04-20T14:18:52.540Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -94,7 +85,7 @@
   <url>
     <loc>https://eamon.dpdns.org/cacheList.json</loc>
     
-    <lastmod>2026-04-20T14:05:08.013Z</lastmod>
+    <lastmod>2026-04-20T14:18:52.537Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -103,7 +94,7 @@
   <url>
     <loc>https://eamon.dpdns.org/about/</loc>
     
-    <lastmod>2026-04-20T14:05:08.013Z</lastmod>
+    <lastmod>2026-04-20T14:18:52.537Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -112,7 +103,7 @@
   <url>
     <loc>https://eamon.dpdns.org/categories/</loc>
     
-    <lastmod>2026-04-20T14:05:08.013Z</lastmod>
+    <lastmod>2026-04-20T14:18:52.537Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -121,7 +112,7 @@
   <url>
     <loc>https://eamon.dpdns.org/archives/</loc>
     
-    <lastmod>2026-04-20T14:05:08.013Z</lastmod>
+    <lastmod>2026-04-20T14:18:52.537Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -130,7 +121,7 @@
   <url>
     <loc>https://eamon.dpdns.org/comments/</loc>
     
-    <lastmod>2026-04-20T14:05:08.013Z</lastmod>
+    <lastmod>2026-04-20T14:18:52.537Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -139,7 +130,16 @@
   <url>
     <loc>https://eamon.dpdns.org/copyright/</loc>
     
-    <lastmod>2026-04-20T14:05:08.013Z</lastmod>
+    <lastmod>2026-04-20T14:18:52.537Z</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>     
+  </url>
+  
+  <url>
+    <loc>https://eamon.dpdns.org/posts/deng-ji/</loc>
+    
+    <lastmod>2026-04-20T14:18:52.536Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -148,7 +148,7 @@
   <url>
     <loc>https://eamon.dpdns.org/posts/ge-shui-zhuan-xiang-fu-jia-di-kou-fang-dai/</loc>
     
-    <lastmod>2026-04-20T14:05:07.998Z</lastmod>
+    <lastmod>2026-04-20T14:18:52.519Z</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>     
@@ -607,7 +607,7 @@
 
   <url>
     <loc>https://eamon.dpdns.org/</loc>
-    <lastmod>2026-04-20T14:06:05.950Z</lastmod>
+    <lastmod>2026-04-20T14:19:12.447Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>       
   </url>
