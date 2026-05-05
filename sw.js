@@ -100,7 +100,7 @@
 
     // noinspection JSFileReferences
     let skipRequest = request => request.url.startsWith("https://i0.hdslb.com") || 
-request.url.startsWith('https://meting-api.9887665.xyz') || 
+request.url.startsWith('https://api.injahow.cn') || 
 request.url.startsWith('https://pagead2.googlesyndication.com') || 
 request.url.startsWith('https://fundingchoicesmessages.google.com')
 let cacheRules = {
