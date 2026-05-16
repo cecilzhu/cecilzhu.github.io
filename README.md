@@ -6,5 +6,5 @@
 ## 预览
 > https://eamon.dpdns.org/
 > https://nt.eamon.dpdns.org/
-> [vercel预览](https://vb.eamon.ggff.net/)
+> [vercel预览](https://vb.eamon.dpdns.org/)
 > [gh Pages预览](https://cecilzhu.github.io/)
