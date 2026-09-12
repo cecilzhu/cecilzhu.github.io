@@ -1,1 +1,1 @@
-{"global":1,"info":[{"version":304}]}
+{"global":1,"info":[{"version":306,"change":[{"flag":"end","value":["/qrcode.min.js","/404.webp","/default_cover.webp","/wx_zf.webp","/search.xml","/sitemap.txt","/sitemap.txt.gz","/sitemap.xml","/sitemap.xml.gz","/sitemap_index.xml","sitemap_index.xml.gz","/submit_urls.txt"]},{"flag":"html"},{"flag":"begin","value":["/archives/","/categories/","/page/","/tags/"]}]},{"version":305,"change":[{"flag":"end","value":"/comment_bg.webp"}]},{"version":304}]}
