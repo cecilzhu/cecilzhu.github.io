@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRAC学习系统 - 自动刷新</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: #f0f2f5;
+            color: #333;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .iframe-container {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #contentFrame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            transform-origin: 0 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .controls {
+            background: white;
+            padding: 12px 20px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        .controls.collapsed {
+            padding: 8px 20px;
+            height: 50px;
+            overflow: hidden;
+        }
+        
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        label {
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        
+        input, button, select {
+            padding: 8px 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        input {
+            min-width: 60px;
+        }
+        
+        #urlInput {
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        button {
+            background: #4b6cb7;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        button:hover {
+            background: #3556a3;
+        }
+        
+        #startBtn {
+            background: #38a169;
+        }
+        
+        #startBtn:hover {
+            background: #2f855a;
+        }
+        
+        #stopBtn {
+            background: #e53e3e;
+        }
+        
+        #stopBtn:hover {
+            background: #c53030;
+        }
+        
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-left: auto;
+        }
+        
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #e53e3e;
+        }
+        
+        .status.active .status-indicator {
+            background: #38a169;
+        }
+        
+        .refresh-overlay {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 12px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 12px;
+            z-index: 100;
+        }
+        
+        .spinner {
+            width: 14px;
+            height: 14px;
+            border: 2px solid rgba(55, 125, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #377dff;
+            animation: spin 1s linear infinite;
+        }
+        
+        .zoom-controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 8px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .zoom-btn {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #4b6cb7;
+            color: white;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .device-presets {
+            display: flex;
+            gap: 8px;
+            margin-left: 10px;
+        }
+        
+        .preset-btn {
+            padding: 6px 10px;
+            font-size: 12px;
+            background: #e2e8f0;
+            border: 1px solid #cbd5e0;
+        }
+        
+        .preset-btn.active {
+            background: #4b6cb7;
+            color: white;
+        }
+        
+        .toggle-controls {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #4b6cb7;
+            color: white;
+            border: none;
+            border-radius: 5px 5px 0 0;
+            padding: 4px 12px;
+            font-size: 12px;
+            cursor: pointer;
+            z-index: 101;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .controls {
+                position: relative;
+                padding: 10px;
+                height: auto;
+                max-height: 40vh;
+                overflow-y: auto;
+            }
+            
+            .controls.collapsed {
+                height: 40px;
+                max-height: 40px;
+                padding: 5px 10px;
+            }
+            
+            .controls.collapsed .control-group:not(.toggle-group),
+            .controls.collapsed .device-presets,
+            .controls.collapsed #applyUrlBtn,
+            .controls.collapsed #startBtn,
+            .controls.collapsed #stopBtn,
+            .controls.collapsed #refreshNowBtn,
+            .controls.collapsed .status {
+                display: none;
+            }
+            
+            .toggle-group {
+                display: flex !important;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .status {
+                margin-left: 0;
+                order: 10;
+            }
+            
+            .device-presets {
+                order: 5;
+                width: 100%;
+                justify-content: center;
+                margin: 5px 0;
+            }
+            
+            .zoom-controls {
+                bottom: 50px;
+                right: 10px;
+            }
+            
+            .control-group {
+                width: 100%;
+            }
+            
+            .button-row {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .button-row button {
+                flex: 1;
+                min-width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="iframe-container">
+        <iframe id="contentFrame" src="http://82.157.138.16:8091/CRAC/crac/pages/stu_review.html" frameborder="0"></iframe>
+        <div class="refresh-overlay" id="refreshOverlay" style="display: none;">
+            <div class="spinner"></div>
+            <span>刷新中...</span>
+        </div>
+        
+        <div class="zoom-controls">
+            <button class="zoom-btn" id="zoomIn">+</button>
+            <button class="zoom-btn" id="zoomOut">-</button>
+            <button class="zoom-btn" id="resetZoom">↺</button>
+        </div>
+    </div>
+    
+    <div class="controls" id="controlsPanel">
+        <button class="toggle-controls" id="toggleControls">▼ 折叠控制面板</button>
+        
+        <div class="control-group">
+            <label for="urlInput">页面URL:</label>
+            <input type="url" id="urlInput" placeholder="输入iframe URL，留空使用默认">
+        </div>
+        
+        <div class="control-group">
+            <label for="refreshInterval">刷新间隔（秒）:</label>
+            <input type="number" id="refreshInterval" min="5" max="3600" value="30">
+        </div>
+        
+        <div class="device-presets">
+            <button class="preset-btn" data-scale="0.8">缩小</button>
+            <button class="preset-btn active" data-scale="1">正常</button>
+            <button class="preset-btn" data-scale="1.2">放大</button>
+            <button class="preset-btn" data-scale="auto">自适应</button>
+        </div>
+        
+        <div class="button-row">
+            <button id="applyUrlBtn">应用URL</button>
+            <button id="startBtn">开始自动刷新</button>
+            <button id="stopBtn">停止自动刷新</button>
+            <button id="refreshNowBtn">立即刷新</button>
+        </div>
+        
+        <div class="status" id="status">
+            <div class="status-indicator"></div>
+            <span>已停止</span>
+        </div>
+        
+        <div class="control-group toggle-group" style="display: none;">
+            <button id="mobileToggleBtn">展开控制面板</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const frame = document.getElementById('contentFrame');
+            const urlInput = document.getElementById('urlInput');
+            const refreshIntervalInput = document.getElementById('refreshInterval');
+            const applyUrlBtn = document.getElementById('applyUrlBtn');
+            const startBtn = document.getElementById('startBtn');
+            const stopBtn = document.getElementById('stopBtn');
+            const refreshNowBtn = document.getElementById('refreshNowBtn');
+            const status = document.getElementById('status');
+            const refreshOverlay = document.getElementById('refreshOverlay');
+            const zoomInBtn = document.getElementById('zoomIn');
+            const zoomOutBtn = document.getElementById('zoomOut');
+            const resetZoomBtn = document.getElementById('resetZoom');
+            const presetBtns = document.querySelectorAll('.preset-btn');
+            const toggleControlsBtn = document.getElementById('toggleControls');
+            const controlsPanel = document.getElementById('controlsPanel');
+            const mobileToggleBtn = document.getElementById('mobileToggleBtn');
+            
+            const defaultSrc = "http://82.157.138.16:8091/CRAC/crac/pages/stu_review.html";
+            
+            let refreshTimer = null;
+            let isRefreshing = false;
+            let currentZoom = 1;
+            let isPanelCollapsed = false;
+            
+            // 更新状态显示
+            function updateStatus(active) {
+                if (active) {
+                    status.classList.add('active');
+                    status.querySelector('span').textContent = '运行中';
+                } else {
+                    status.classList.remove('active');
+                    status.querySelector('span').textContent = '已停止';
+                }
+            }
+            
+            // 切换控制面板
+            function toggleControlsPanel() {
+                isPanelCollapsed = !isPanelCollapsed;
+                controlsPanel.classList.toggle('collapsed', isPanelCollapsed);
+                
+                if (toggleControlsBtn) {
+                    toggleControlsBtn.textContent = isPanelCollapsed ? '▲ 展开控制面板' : '▼ 折叠控制面板';
+                }
+                
+                if (mobileToggleBtn) {
+                    mobileToggleBtn.textContent = isPanelCollapsed ? '展开控制面板' : '折叠控制面板';
+                }
+                
+                // 保存状态到本地存储
+                localStorage.setItem('panelCollapsed', isPanelCollapsed);
+            }
+            
+            // 刷新iframe函数 - 修复跨域问题
+            function refreshIframe() {
+                if (isRefreshing) return;
+                
+                isRefreshing = true;
+                refreshOverlay.style.display = 'flex';
+                
+                // 保存当前src
+                const currentSrc = frame.src;
+                
+                // 重新加载iframe - 使用技巧避免跨域问题
+                frame.src = 'about:blank';
+                
+                setTimeout(function() {
+                    frame.src = currentSrc;
+                    
+                    // 设置超时隐藏刷新指示器
+                    setTimeout(function() {
+                        refreshOverlay.style.display = 'none';
+                        isRefreshing = false;
+                    }, 2000);
+                }, 500);
+            }
+            
+            // 应用URL
+            function applyUrl() {
+                let url = urlInput.value.trim();
+                if (!url) {
+                    url = defaultSrc;
+                    urlInput.value = url;
+                }
+                
+                try {
+                    // 验证URL格式
+                    new URL(url);
+                    frame.src = url;
+                    // 保存到本地存储
+                    localStorage.setItem('iframeUrl', url);
+                    
+                    // 重置缩放
+                    resetZoom();
+                } catch (e) {
+                    alert('请输入有效的URL地址');
+                }
+            }
+            
+            // 应用缩放
+            function applyZoom() {
+                frame.style.transform = `scale(${currentZoom})`;
+                frame.style.width = `${100 / currentZoom}%`;
+                frame.style.height = `${100 / currentZoom}%`;
+                frame.style.transformOrigin = '0 0';
+            }
+            
+            // 自适应缩放
+            function autoZoom() {
+                // 移动设备自适应逻辑
+                if (window.innerWidth < 768) {
+                    // 在移动设备上，根据窗口宽度调整缩放
+                    const containerWidth = document.querySelector('.iframe-container').offsetWidth;
+                    currentZoom = containerWidth / 1200; // 假设内容宽度为1200px
+                    currentZoom = Math.max(0.5, Math.min(1, currentZoom)); // 限制缩放范围
+                } else {
+                    currentZoom = 1;
+                }
+                applyZoom();
+            }
+            
+            // 缩放控制
+            function zoomIn() {
+                currentZoom += 0.1;
+                applyZoom();
+            }
+            
+            function zoomOut() {
+                currentZoom = Math.max(0.5, currentZoom - 0.1);
+                applyZoom();
+            }
+            
+            function resetZoom() {
+                currentZoom = 1;
+                applyZoom();
+            }
+            
+            // 设置预设缩放
+            function setPresetScale(scale) {
+                if (scale === 'auto') {
+                    autoZoom();
+                } else {
+                    currentZoom = parseFloat(scale);
+                    applyZoom();
+                }
+                
+                // 更新激活状态
+                presetBtns.forEach(btn => {
+                    if (btn.dataset.scale === scale) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            }
+            
+            // 开始自动刷新
+            function startAutoRefresh() {
+                // 清除现有计时器
+                if (refreshTimer) {
+                    clearInterval(refreshTimer);
+                }
+                
+                const interval = parseInt(refreshIntervalInput.value) * 1000;
+                if (interval < 5000) {
+                    alert('刷新间隔不能小于5秒');
+                    return;
+                }
+                
+                refreshTimer = setInterval(refreshIframe, interval);
+                updateStatus(true);
+                
+                // 立即刷新一次
+                refreshIframe();
+            }
+            
+            // 停止自动刷新
+            function stopAutoRefresh() {
+                if (refreshTimer) {
+                    clearInterval(refreshTimer);
+                    refreshTimer = null;
+                }
+                updateStatus(false);
+            }
+            
+            // 立即刷新
+            function refreshNow() {
+                refreshIframe();
+            }
+            
+            // 添加事件监听器
+            applyUrlBtn.addEventListener('click', applyUrl);
+            startBtn.addEventListener('click', startAutoRefresh);
+            stopBtn.addEventListener('click', stopAutoRefresh);
+            refreshNowBtn.addEventListener('click', refreshNow);
+            zoomInBtn.addEventListener('click', zoomIn);
+            zoomOutBtn.addEventListener('click', zoomOut);
+            resetZoomBtn.addEventListener('click', resetZoom);
+            
+            if (toggleControlsBtn) {
+                toggleControlsBtn.addEventListener('click', toggleControlsPanel);
+            }
+            
+            if (mobileToggleBtn) {
+                mobileToggleBtn.addEventListener('click', toggleControlsPanel);
+            }
+            
+            // 设备预设按钮
+            presetBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    setPresetScale(this.dataset.scale);
+                });
+            });
+            
+            // 输入框验证
+            refreshIntervalInput.addEventListener('change', function() {
+                let value = parseInt(this.value);
+                if (value < 5) this.value = 5;
+                if (value > 3600) this.value = 3600;
+                
+                // 如果正在运行，重新启动计时器
+                if (refreshTimer) {
+                    startAutoRefresh();
+                }
+            });
+            
+            // 支持回车键应用URL
+            urlInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    applyUrl();
+                }
+            });
+            
+            // 从本地存储加载URL
+            const savedUrl = localStorage.getItem('iframeUrl');
+            if (savedUrl) {
+                urlInput.value = savedUrl;
+                frame.src = savedUrl;
+            } else {
+                urlInput.value = defaultSrc;
+            }
+            
+            // 从本地存储加载面板状态
+            const savedPanelState = localStorage.getItem('panelCollapsed');
+            if (savedPanelState === 'true') {
+                isPanelCollapsed = true;
+                controlsPanel.classList.add('collapsed');
+                if (toggleControlsBtn) {
+                    toggleControlsBtn.textContent = '▲ 展开控制面板';
+                }
+            }
+            
+            // 初始状态
+            updateStatus(false);
+            
+            // 响应窗口大小变化
+            window.addEventListener('resize', function() {
+                // 如果当前是自适应模式，重新计算缩放
+                const activePreset = document.querySelector('.preset-btn.active');
+                if (activePreset && activePreset.dataset.scale === 'auto') {
+                    autoZoom();
+                }
+            });
+            
+            // 初始自适应缩放
+            autoZoom();
+        });
+    </script>
+</body>
+</html>
