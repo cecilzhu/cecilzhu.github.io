@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Sitemap: https://eamon.dpdns.org/sitemap_index.xml
+Sitemap: https://eamon.dpdns.org/sitemap.xml
+Sitemap: https://eamon.dpdns.org/sitemap.txt
+Sitemap: https://eamon.dpdns.org/sitemap.xml.gz
+Sitemap: https://eamon.dpdns.org/sitemap.txt.gz
